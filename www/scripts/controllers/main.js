@@ -16,4 +16,9 @@ angular.module('yomadApp')
       var path = '/map/'+location.id;
       $location.path(path);
     }
+
+    $scope.showSubmitMessage = function(){
+      var path = '/submit';
+      $location.path(path);
+    }
   }]);

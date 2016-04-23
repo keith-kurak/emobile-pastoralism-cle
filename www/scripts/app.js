@@ -30,6 +30,10 @@
         templateUrl: 'views/controllers/settings.html',
         controller: 'SettingsCtrl'
       })
+      .when('/submit', {
+        templateUrl: 'views/controllers/submit.html',
+        controller: 'SubmitCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
