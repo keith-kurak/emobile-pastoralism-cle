@@ -25,15 +25,26 @@
                 "../img/Glyphs png/field.png",
                 "../img/Glyphs png/police.png",
             ];
+            
+            var icon_dict_list = [
+                ["../img/Glyphs png/snowflake.png",[ -81.8618, 41.4155]],
+                ["../img/Glyphs png/hospital.png",[-81.809974,41.404064]],
+                ["../img/Glyphs png/land.png",[-81.888813, 41.411275]],
+                ["../img/Glyphs png/police.png",[-81.8504, 41.4124]],
+            ];
 
             // Create random point features
             var i, lat, lon, geom, feature, features = [], style, rnd;
-            for(i=0; i< 200; i++) {
+            for(i=0; i< 4; i++) {
+                coord = icon_dict_list[i][1]
+                console.log(icon_dict_list)
                 lat = Math.random() * 174 - 87;
                 lon = Math.random() * 360 - 180;
+                console.log(coord)
 
                 geom = new ol.geom.Point(
-                    ol.proj.transform([lon, lat], 'EPSG:4326', 'EPSG:3857')
+                    //ol.proj.transform([lon, lat], 'EPSG:4326', 'EPSG:3857')
+                    ol.proj.transform(coord, 'EPSG:4326', 'EPSG:3857')
                 );
 
                 feature = new ol.Feature(geom);
@@ -51,7 +62,7 @@
                             anchorXUnits: 'fraction',
                             anchorYUnits: 'fraction',
                             //opacity: rnd,
-                            src: icons[ Math.floor(rnd * (icons.length) ) ]
+                            src: icon_dict_list[ i ][0]
                         }))
                     }),
                     new ol.style.Style({
@@ -86,7 +97,7 @@
         ],
         view: new ol.View({
           center: ol.proj.fromLonLat([-81.8618, 41.415]), //cleveland
-          zoom: 5
+          zoom: 13
         })
       });
     </script>
