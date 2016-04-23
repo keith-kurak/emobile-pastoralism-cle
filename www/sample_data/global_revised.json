@@ -1,0 +1,41 @@
+{
+    "locations": {
+        "cle":{
+            "name": "cleveland",
+            "coordinates": "",
+            "messages": {
+                    "0":{
+                        "isBurst": false,
+                        "burstDuration": 0,
+                        "priority": 1,
+                        "title": "Fairview Hospital",
+                        "type": "hospital",
+                        "address1": "18101 Lorain Avenue",
+                        "address2": "Cleveland, OH 44111",
+                        "phone": "(216) 476-7000",
+                        "mapUrl": "",
+                        "detailImgUrl": "",
+                        "detailText": "",
+                        "locationDesc": "East of the Rocky River, South of I-90",
+                        "iconUrl": "",
+                        "lonLatCoordinates": [-81.8618, 41.415]
+                    },
+                    "1": {
+                        "isBurst": false,  
+                        "burstDuration": 0,  
+                        "priority": 1,  
+                        "title": "Cleveland Police Department", 
+                        "type": "police",  
+                        "address1": "6600 Detroit Avenue",
+                        "address2": "Cleveland, OH 44102", 
+                        "phone": "(216) 348-7117", 
+                        "mapUrl": "", 
+                        "detailImgUrl": "", 
+                        "detailText": "", 
+                        "locationDesc": "South of Lake Erie, West of Cuyahoga River", 
+                        "iconUrl": ""
+                      },
+                    }
+                }
+            }
+        }
