@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Yomad Detail</title>
+    <!-- Bootstrap mobile first tag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap mobile first tag -->
+    <link href="/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+  </head>
+  <body>
+    <h1 class="text-center">Yomad</h1>
+    <div>
+      <h3>Additional Information</h3>
+    </div>
+    <!--
+    <div>
+      <img class="center-block icon" src="/img/Glyphs png/glyphicons-299-hospital.png" />
+    </div>
+    -->
+
+  <div ng-repeat="message in messages">
+    <span>{{message.title}}</span>
+    <span>{{message.address1}}</span>
+    <span>{{message.address2}}</span>
+    <span>{{message.phone}}</span>
+    <span>{{message.locationDesc}}</span>
+  </div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+
+</body>
