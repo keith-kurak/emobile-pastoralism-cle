@@ -1,0 +1,118 @@
+{
+    "locations": [{
+        "name": "cleveland",
+        "coordinates": "",
+        "messages": [{
+            "isBurst": false,
+            "burstDuration": 0,
+            "priority": 1,
+            "title": "Fairview Hospital",
+            "type": "hospital",
+            "address1": "18101 Lorain Avenue",
+            "address2": "Cleveland, OH 44111",
+            "phone": "(216) 476-7000",
+            "mapUrl": "",
+            "detailImgUrl": "",
+            "detailText": "",
+            "locationDesc": "East of the Rocky River, South of I-90",
+            "iconUrl": "",
+            "lonLatCoordinates": [-81.8618, 41.415]
+        },
+        {
+            "isBurst": false,  
+            "burstDuration": 0,  
+            "priority": 1,  
+            "title": "Cleveland Police Department", 
+            "type": "police",  
+            "address1": "6600 Detroit Avenue",
+            "address2": "Cleveland, OH 44102", 
+            "phone": "(216) 348-7117", 
+            "mapUrl": "", 
+            "detailImgUrl": "", 
+            "detailText": "", 
+            "locationDesc": "South of Lake Erie, West of Cuyahoga River", 
+            "iconUrl": ""
+          },
+
+          {
+            "isBurst": false,  
+            "burstDuration": 0,  
+            "priority": 0, 
+            "title": "Poor Clares Monastery", 
+            "type": "monastery",
+            "address1": "3501 Rocky River Drive", 
+            "address2": "Cleveland, OH 44111", 
+            "phone": "(216) 941-2820", 
+            "mapUrl": "", 
+            "detailImgUrl": "", 
+            "detailText": "",
+            "locationDesc": "East of the Rocky River, South of Lake Erie", 
+            "iconUrl": ""
+          },
+
+          {
+            "isBurst": false,  
+            "burstDuration": 0, 
+            "priority": 1, 
+            "title": "Gateway Animal Clinic",
+            "type": "vet", 
+            "address1": "1819 Abbey Avenue",
+            "address2": "Cleveland, OH 44113",
+            "phone": "(216) 771-4414",
+            "mapUrl": "", 
+            "detailImgUrl": "", 
+            "detailText": "",
+            "locationDesc": "South of Cuyahoga River, South of Abbey Park",
+            "iconUrl": ""
+          },
+
+          {
+            "isBurst": true, 
+            "burstDuration": 5, 
+            "priority": 1,
+            "title": "High Winds",
+            "type": "weather",
+            "address1": "",
+            "address2": "", 
+            "phone": "",
+            "mapUrl": "",
+            "detailImgUrl": "",
+            "detailText": "",
+            "locationDesc": "Lake Erie lakefront",
+            "iconUrl": ""
+          },
+
+          {
+            "isBurst": true, 
+            "burstDuration": 10, 
+            "priority": 0,  
+            "title": "High Grass Growth", 
+            "type": "land", 
+            "address1": "Upper Edgewater Drive",
+            "address2": "Cleveland, OH 44102",
+            "phone": "",  
+            "mapUrl": "", 
+            "detailImgUrl": "",
+            "detailText": "", 
+            "locationDesc": "Edgewater Park, South of Lake Erie", 
+            "iconUrl": ""
+          },
+
+          {
+            "isBurst": false,
+            "burstDuration": 0,
+            "priority": 0,
+            "title": "West Side Market", 
+            "type": "market", 
+            "address1": "1979 W 25th Street",
+            "address2": "Cleveland, OH 44113", 
+            "phone": "(216) 664-3387",
+            "mapUrl": "",
+            "detailImgUrl": "", 
+            "detailText": "", 
+            "locationDesc": "Ohio City, South of Cuyahoga River",
+            "iconUrl": ""
+          }
+        ]
+    }]
+}
