@@ -13,6 +13,7 @@ var clevelandData = [
     detailText: '', //additional information about message
     locationDesc: 'East of the Rocky River, South of I-90', //additional location description, esp if address unknown
     iconUrl: '', //url for icon
+    lonLatCoordinates:[-81.8618, 41.415] //Longitude and latitude for this location 
   },
 
   {//Police
