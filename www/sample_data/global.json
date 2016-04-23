@@ -21,7 +21,7 @@
             "detailText": "",
             "locationDesc": "East of the Rocky River, South of I-90",
             "iconUrl": "",
-            "lonLatCoordinates": [-81.8618, 41.415]
+            "lonLatCoordinates": [ -81.8240247, 41.4503265]
         },
         {
             "id":"1",
@@ -38,7 +38,8 @@
             "detailImgUrl": "",
             "detailText": "",
             "locationDesc": "South of Lake Erie, West of Cuyahoga River",
-            "iconUrl": ""
+            "iconUrl": "",
+            "lonLatCoordinates": [-81.800911, 41.4839694]
           },
 
           {
@@ -56,7 +57,8 @@
             "detailImgUrl": "",
             "detailText": "",
             "locationDesc": "East of the Rocky River, South of Lake Erie",
-            "iconUrl": ""
+            "iconUrl": "",
+            "lonLatCoordinates": [-81.814020, 41.4578802]
           },
 
           {
@@ -74,7 +76,8 @@
             "detailImgUrl": "",
             "detailText": "",
             "locationDesc": "South of Cuyahoga River, South of Abbey Park",
-            "iconUrl": ""
+            "iconUrl": "",
+            "lonLatCoordinates": [-81.6976159, 41.4840506]
           },
 
           {
@@ -92,7 +95,8 @@
             "detailImgUrl": "",
             "detailText": "",
             "locationDesc": "Lake Erie lakefront",
-            "iconUrl": ""
+            "iconUrl": "",
+            "lonLatCoordinates": [-81.685202, 41.519377]
           },
 
           {
@@ -110,7 +114,8 @@
             "detailImgUrl": "",
             "detailText": "",
             "locationDesc": "Edgewater Park, South of Lake Erie",
-            "iconUrl": ""
+            "iconUrl": "",
+            "lonLatCoordinates": [-81.747262, 41.486767]
           },
 
           {
@@ -128,7 +133,8 @@
             "detailImgUrl": "",
             "detailText": "",
             "locationDesc": "Ohio City, South of Cuyahoga River",
-            "iconUrl": ""
+            "iconUrl": "",
+            "lonLatCoordinates": [-81.705266, 41.4846426]
           },
 
           {
@@ -146,7 +152,8 @@
             "detailImgUrl": "",
             "detailText": "",
             "locationDesc": "Cuyahoga Valley National Park",
-            "iconUrl": ""
+            "iconUrl": "",
+            "lonLatCoordinates": [-81.5782833, 41.2728948]
           },
 
           {
@@ -164,7 +171,8 @@
             "detailImgUrl": "",
             "detailText": "",
             "locationDesc": "Mouth of Cuyahoga River",
-            "iconUrl": ""
+            "iconUrl": "",
+            "lonLatCoordinates": [-81.705778, 41.5008579]
           }]
         },
 
@@ -188,7 +196,7 @@
                 "detailText": "",
                 "locationDesc": "South of Little Cuyahoga River",
                 "iconUrl": "",
-                "lonLatCoordinates": [-81.8618, 41.415]
+                "lonLatCoordinates": [-81.5017436, 41.0802274]
             }]
     }]
 }
