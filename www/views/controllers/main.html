@@ -22,7 +22,7 @@
     ng-click="showMessageDetail(message)">
     <div>
       <div style="float:left;clear:left">
-        <img class="icon" src="/img/Glyphs png/hospital.png" />
+        <img ng-src="{{message.localIconPath}}" />
       </div>
       <div style="float:left">
         <div>{{message.title}}</div>

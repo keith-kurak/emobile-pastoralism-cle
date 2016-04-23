@@ -1,7 +1,7 @@
 //TODO: fields we might need:
 //id (like a PK) or a loginName,
 //date
-var clevelandData = [
+/*var clevelandData = [
   {//Hospital
     isBurst: false,  //defines message type; burst (isBurst = true) or beacon (isBurst=false)
     burstDuration: 0,  //if burst, defines initial burst length; beacon default to 0
@@ -113,6 +113,6 @@ var clevelandData = [
     detailText: '', //additional information about message
     locationDesc: 'Ohio City, South of Cuyahoga River', //additional location description, esp if address unknown
     iconUrl: '', //url for icon
-  },
+  },*/
 
 ]
