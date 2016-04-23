@@ -1,45 +1,26 @@
-<!--
-#
-# Licensed to the Apache Software Foundation (ASF) under one
-# or more contributor license agreements.  See the NOTICE file
-# distributed with this work for additional information
-# regarding copyright ownership.  The ASF licenses this file
-# to you under the Apache License, Version 2.0 (the
-# "License"); you may not use this file except in compliance
-# with the License.  You may obtain a copy of the License at
-#
-# http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing,
-# software distributed under the License is distributed on an
-# "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-#  KIND, either express or implied.  See the License for the
-# specific language governing permissions and limitations
-# under the License.
-#
--->
+Welcome to the emobile-pastoralism-cle wiki!
 
-# Apache Cordova Hello World Application
+First step for anything:
 
-Simple Hello World application. This is used as the default app template
-when creating new projects.
+1. Download the github repo using the Github client.
 
-## Versions and Tags
+Here's how to install and run in your browser (Windows)
 
-The Hello World's version is directly tied to an Apache Cordova release.
+1. Download and install Fenix: http://fenixwebserver.com
+2. Open Fenix
+3. 
 
-For example, Hello World `2.0.0` is compatible with Apache Cordova `2.0.0`.
+Here's how to install and run in your browser (OS X)
 
-To update the snapshot within a platform repo, copy `www/` into the repo's
-template directory, and copy in the relevant files from `res/` as well.
+1. Open the command prompt and navigate to your github project root folder
+2. Type command "cd www"
+3. Run python -m SimpleHTTPServer 8080
 
-## How to Update
+Here's how to install and run on an Android device:
 
-Update to Apache Cordova x.x.x by:
-
-1. `VERSION`
-    - Update the version
-2. Commit and Tag
-    - `git commit -am "[app] Version x.x.x"`
-    - `git tag x.x.x`
-
+1. Download and setup Android SDK (pain in the butt)
+2. Download and install Node.js
+3. Download and install Apache Cordova
+4. Open up the command prompt and navigate to the project folder (the root folder of the github repo)
+5. Plug in your device. Make sure USB debugging is enabled.
+6. Run "cordova run android --device"
