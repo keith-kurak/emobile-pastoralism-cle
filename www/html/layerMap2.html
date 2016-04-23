@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Layer Groups</title>
+    <link rel="stylesheet" href="http://openlayers.org/en/v3.15.1/css/ol.css" type="text/css">
+    <script src="http://openlayers.org/en/v3.15.1/build/ol.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <style>
+      #layertree li > span {
+        cursor: pointer;
+      }    </style>
+  </head>
+  <body>
+    <div id="map" class="map"></div>
+    <button onclick="myFunction()">Click me</button>
+    <div id="layertree">
+      <h5>Click on layer nodes below to change their properties.</h5>
+      <ul>
+        <li><span>OpenAerial layer</span>
+          <fieldset id="layer0">
+            <label class="checkbox" for="visible0">
+              <input id="visible0" class="visible" type="checkbox"/>visibility
+            </label>
+            <label>opacity</label>
+            <input class="opacity" type="range" min="0" max="1" step="0.01"/>
+          </fieldset>
+        </li>
+        <li><span>Layer group</span>
+          <fieldset id="layer1">
+            <label class="checkbox" for="visible1">
+              <input id="visible1" class="visible" type="checkbox"/>visibility
+            </label>
+            <label>opacity</label>
+            <input class="opacity" type="range" min="0" max="1" step="0.01"/>
+          </fieldset>
+          <ul>
+            <li><span>Food insecurity layer</span>
+              <fieldset id="layer10">
+                <label class="checkbox" for="visible10">
+                  <input id="visible10" class="visible" type="checkbox"/>visibility
+                </label>
+                <label>opacity</label>
+                <input class="opacity" type="range" min="0" max="1" step="0.01"/>
+              </fieldset>
+            </li>
+            <li><span>World borders layer</span>
+              <fieldset id="layer11">
+                <label class="checkbox" for="visible11">
+                  <input id="visible11" class="visible" type="checkbox"/>visibility
+                </label>
+                <label>opacity</label>
+                <input class="opacity" type="range" min="0" max="1" step="0.01"/>
+              </fieldset>
+            </li>
+            <li><span>geojson layer</span>
+              <fieldset id="layer12">
+                <label class="checkbox" for="visible12">
+                  <input id="visible12" class="visible" type="checkbox"/>visibility
+                </label>
+                <label>opacity</label>
+                <input class="opacity" type="range" min="0" max="1" step="0.01"/>
+              </fieldset>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <script>
+      var map = new ol.Map({
+        layers: [
+          new ol.layer.Tile({
+            source: new ol.source.MapQuest({layer: 'sat'})
+          }), new ol.layer.Group({
+            layers: [
+              new ol.layer.Tile({source: new ol.source.OSM()}),
+              new ol.layer.Tile({
+                source: new ol.source.TileJSON({
+                  url: 'http://api.tiles.mapbox.com/v3/' +
+                      'mapbox.world-borders-light.json',
+                  crossOrigin: 'anonymous'
+                })
+              })
+            ]
+          })
+        ],
+        target: 'map',
+        view: new ol.View({
+          center: ol.proj.fromLonLat([-81.8618, 41.415]),
+          zoom: 13
+        })
+      });
+
+      function bindInputs(layerid, layer) {
+        var visibilityInput = $(layerid + ' input.visible');
+        visibilityInput.on('change', function() {
+          layer.setVisible(this.checked);
+        });
+        visibilityInput.prop('checked', layer.getVisible());
+
+        var opacityInput = $(layerid + ' input.opacity');
+        opacityInput.on('input change', function() {
+          layer.setOpacity(parseFloat(this.value));
+        });
+        opacityInput.val(String(layer.getOpacity()));
+      }
+      map.getLayers().forEach(function(layer, i) {
+        bindInputs('#layer' + i, layer);
+        if (layer instanceof ol.layer.Group) {
+          layer.getLayers().forEach(function(sublayer, j) {
+            bindInputs('#layer' + i + j, sublayer);
+          });
+        }
+      });
+
+      $('#layertree li > span').click(function() {
+        $(this).siblings('fieldset').toggle();
+      }).siblings('fieldset').hide();
+      
+      function myFunction() {
+        // Vectorlayer to get the Overlay-Label in the Layerswitcher
+        var points = [
+            new ol.geom.Point(0, 0)
+        ];
+        // create some attributes for the feature
+        //var attributes = {name: "my name", bar: "foo"};
+        //var feature = new ol.Feature.Vector(points[0], attributes);
+        var feature = new ol.Feature({
+          geometry: new ol.geom.Polygon(polyCoords),
+          labelPoint: new ol.geom.Point(labelCoords),
+          name: 'My Polygon'
+        });
+        
+        var layer = new ol.Layer.Vector("Test");
+        layer.addFeatures([feature]);
+        map.addLayer(layer);
+    }
+    </script>
+  </body>
+</html>

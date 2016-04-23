@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Icon Map</title>
+    <link rel="stylesheet" href="http://openlayers.org/en/v3.15.1/css/ol.css" type="text/css">
+    <script src="http://openlayers.org/en/v3.15.1/build/ol.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <style>
+      #layertree li > span {
+        cursor: pointer;
+      }    </style>
+  </head>
+  <body>
+    <div id="map" class="map"></div>
+    
+    <script>
+       // Icons
+            var icons = [
+                "www/img/Glyphs png/glyphicons-22-snowflake.png",
+                "images/mapiconscollection-weather/cloudy.png",
+                "images/mapiconscollection-weather/cloudysunny.png",
+                "images/mapiconscollection-weather/moonstar.png",
+                "images/mapiconscollection-weather/rainy.png",
+                "images/mapiconscollection-weather/snowy-2.png",
+                "images/mapiconscollection-weather/sunny.png",
+                "images/mapiconscollection-weather/thunderstorm.png",
+                "images/mapiconscollection-weather/tornado-2.png",
+                "images/mapiconscollection-weather/umbrella-2.png",
+                "images/mapiconscollection-weather/wind-2.png"
+            ];
+            icons = [
+                "../img/glyphicons-22-snowflake.png",
+                "../img/Glyphs png/glyphicons-299-hospital.png",
+                "../img/Glyphs png/glyphicons-615-field.png",
+                "../img/Glyphs png/glyphicons-646-police.png",
+            ];
+
+            // Create random point features
+            var i, lat, lon, geom, feature, features = [], style, rnd;
+            for(i=0; i< 200; i++) {
+                lat = Math.random() * 174 - 87;
+                lon = Math.random() * 360 - 180;
+
+                geom = new ol.geom.Point(
+                    ol.proj.transform([lon, lat], 'EPSG:4326', 'EPSG:3857')
+                );
+
+                feature = new ol.Feature(geom);
+                features.push(feature);
+
+                rnd = Math.random();
+                
+                style = [
+                    new ol.style.Style({
+                        image: new ol.style.Icon(({
+                            scale: 1 + rnd,
+                            rotateWithView: (rnd < 0.9) ? true : false,
+                            rotation: 360 * rnd * Math.PI / 180,
+                            anchor: [0.5, 1],
+                            anchorXUnits: 'fraction',
+                            anchorYUnits: 'fraction',
+                            opacity: rnd,
+                            src: icons[ Math.floor(rnd * (icons.length) ) ]
+                        }))
+                    }),
+                    new ol.style.Style({
+                        image: new ol.style.Circle({
+                            radius: 5,
+                            fill: new ol.style.Fill({
+                                color: 'rgba(230,120,30,0.7)'
+                            })
+                        })
+                    })
+                ];
+
+                feature.setStyle(style);
+            }    
+
+            // Source and vector layer
+            var vectorSource = new ol.source.Vector({
+                features: features
+            });
+
+            var vectorLayer = new ol.layer.Vector({
+                source: vectorSource
+            });
+
+            // Maps
+            var map = new ol.Map({
+                target: 'map',  // The DOM element that will contains the map
+                renderer: 'canvas', // Force the renderer to be used
+                layers: [
+                    // Add a new Tile layer getting tiles from OpenStreetMap source
+                    new ol.layer.Tile({
+                        source: new ol.source.OSM()
+                    }),
+                    vectorLayer
+                ],
+                // Create a view centered on the specified location and zoom level
+                view: new ol.View({
+                    center: ol.proj.transform([2.1833, 41.3833], 'EPSG:4326', 'EPSG:3857'),
+                    zoom: 3
+                }),
+                interactions: ol.interaction.defaults().extend([
+                    new ol.interaction.DragRotateAndZoom()
+                ])
+            });
+    </script>
+  </body>
+</html>

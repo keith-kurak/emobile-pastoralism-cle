@@ -9,11 +9,15 @@
       }
     </style>
     <script src="http://openlayers.org/en/v3.15.1/build/ol.js" type="text/javascript"></script>
-    <title>OpenLayers 3 example</title>
+    <title>Cleveland Map</title>
   </head>
   <body>
     <h2>My Map</h2>
     <div id="map" class="map"></div>
+    <button onclick="myFunction()">Click me</button>
+    <div>
+      <a href="#">Home</a>
+    </div>
     <script type="text/javascript">
       var map = new ol.Map({
         target: 'map',
@@ -28,6 +32,25 @@
           zoom: 13
         })
       });
+      
+      function myFunction() {
+        // Vectorlayer to get the Overlay-Label in the Layerswitcher
+        var points = [
+            new ol.geom.Point(0, 0)
+        ];
+        // create some attributes for the feature
+        //var attributes = {name: "my name", bar: "foo"};
+        //var feature = new ol.Feature.Vector(points[0], attributes);
+        var feature = new ol.Feature({
+          geometry: new ol.geom.Polygon(polyCoords),
+          labelPoint: new ol.geom.Point(labelCoords),
+          name: 'My Polygon'
+        });
+        
+        var layer = new ol.Layer.Vector("Test");
+        layer.addFeatures([feature]);
+        map.addLayer(layer);
+    }
     </script>
   </body>
 </html>
