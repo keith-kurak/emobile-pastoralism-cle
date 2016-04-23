@@ -170,6 +170,32 @@
                         "lonLatCoordinates": [-81.705778, 41.5008579]
                     }
               }
+        },
+        "akr":
+        {
+            "name": "akron",
+            "coordinates": "",
+            "messages":
+            {
+                    "9":
+                    {
+                        "user":"SummaAkronHosp",
+                        "isBurst": false,
+                        "burstDuration": 0,
+                        "priority": 1,
+                        "title": "Summa Akron City Hospital",
+                        "type": "hospital",
+                        "address1": "525 E Market Street",
+                        "address2": "Akron, OH 443041",
+                        "phone": "(330) 375-3000",
+                        "mapUrl": "",
+                        "detailImgUrl": "",
+                        "detailText": "",
+                        "locationDesc": "South of Little Cuyahoga River",
+                        "iconUrl": "",
+                        "lonLatCoordinates": [-81.5017436, 41.0802274]
+                    }
+            }
         }
     }
 }
