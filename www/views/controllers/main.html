@@ -1,6 +1,37 @@
-<div>There should be a list of messages below:</div>
-<div>{{testAlert}}</div>
-<div/>
-<div ng-repeat="message in messages">
-  <span>{{message.type}} : {{message.title}}</span>
-</div>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Yomad Main</title>
+    <!-- Bootstrap mobile first tag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap mobile first tag -->
+    <link href="/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+  </head>
+  <body>
+    <h1 class="text-center">Yomad</h1>
+    <div class="form-group">
+      <form>
+        <label>Select Your Location</label>
+        <select class="form-control" id="locationSelect" name="location">
+          <option value="Cleveland">Cleveland</option>
+          <option value="Akron">Akron</option>
+          <option value="Pittsburgh">Pittsburgh</option>
+        <select>
+      </form>
+    </div>
+    <div>
+      <img src="/img/Glyphs png/glyphicons-299-hospital.png" />
+    </div>
+    <a href="/html/MoreInfo.html">Get More Information On This Resource</a>
+  <div>There should be a list of messages below:</div>
+    <div>{{testAlert}}</div>
+  <div/>
+  <div ng-repeat="message in messages">
+    <span>{{message.type}} : {{message.title}}</span>
+  </div>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+
+</body>
