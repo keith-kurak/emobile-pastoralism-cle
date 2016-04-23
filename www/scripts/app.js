@@ -22,6 +22,10 @@
         templateUrl: 'views/controllers/detail.html',
         controller: 'DetailCtrl'
       })
+      .when('/map/:locationId', {
+        templateUrl: 'views/controllers/map.html',
+        controller: 'MapCtrl'
+      })
       .when('/settings', {
         templateUrl: 'views/controllers/settings.html',
         controller: 'SettingsCtrl'

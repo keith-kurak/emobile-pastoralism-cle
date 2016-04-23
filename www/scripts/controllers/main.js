@@ -11,4 +11,9 @@ angular.module('yomadApp')
       var path = '/main/'+message.id;
       $location.path(path);
     }
+
+    $scope.showMap = function(locationId){
+      var path = '/map/'+location.id;
+      $location.path(path);
+    }
   }]);

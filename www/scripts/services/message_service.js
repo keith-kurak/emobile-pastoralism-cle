@@ -37,7 +37,7 @@ angular.module('yomadApp')
     }
 
     return {
-      getMessagesForArea(area) {
+      getMessagesForArea(location) {
         return getMessages();
       },
       getMessage(messageId) {
@@ -47,6 +47,9 @@ angular.module('yomadApp')
           });
           return $q.when(message);
         }); 
+      },
+      getLocations() {
+        
       }
     }
 
