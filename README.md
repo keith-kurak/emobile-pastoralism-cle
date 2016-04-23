@@ -12,7 +12,7 @@ Here's how to install and run in your browser (Windows)
 4. Click the play button to start the web server
 5. In your browser, navigate to localhost:8080
 6. If you get the error "angular is not defined" you will need to install the angular dependencies using node.js and bower. I found this site helpful: https://ruleoftech.com/2015/setting-up-bower-and-gulp-in-windows
-7. To summarize, install node.js from nodejs.org.
+7. To summarize, install node.js from http://nodejs.org
 8. Once installed open the command prompt and type 'npm install -g bower' to install bower.
 9. then in your git shell (settings>open in git shell) navigate to the www/ directory and run command bower install (it is important to be in the same directory as the bower.json file) If this runs successfully the site should now run!
 
