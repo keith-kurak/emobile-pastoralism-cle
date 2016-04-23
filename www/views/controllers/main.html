@@ -1,2 +1,6 @@
-<div>There should be a message below:</div>
-<div>{{message}}</div>
+<div>There should be a list of messages below:</div>
+<div>{{testAlert}}</div>
+<div/>
+<div ng-repeat="message in messages">
+  <span>{{message.type}} : {{message.title}}</span>
+</div>
