@@ -8,13 +8,16 @@ Here's how to install and run in your browser (Windows)
 
 1. Download and install Fenix: http://fenixwebserver.com
 2. Open Fenix
-3. 
+3. Create a new website. Enter 8080 for the port and set the folder to be emobile-pastoralism-cle\www
+4. Click the play button to start the web server
+5. In your browser, navigate to localhost:8080
 
 Here's how to install and run in your browser (OS X)
 
 1. Open the command prompt and navigate to your github project root folder
 2. Type command "cd www"
 3. Run python -m SimpleHTTPServer 8080
+4. In your browser, navigate to localhost:8080
 
 Here's how to install and run on an Android device:
 
