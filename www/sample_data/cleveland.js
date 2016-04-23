@@ -37,7 +37,7 @@ var clevelandData = [
     burstDuration: 0,  //if burst, defines initial burst length; beacon default to 0
     priority: 0,  //priority designation of 0 (low) or 1 (high)
     title: 'Poor Clares Monastery', //name of message
-    type: 'monastery',  //placeholder, matches icon name
+    type: 'temple',  //placeholder, matches icon name
     address1: '3501 Rocky River Drive', //street address of location, if known
     address2: 'Cleveland, OH 44111', //city, state, zip of location, if known
     phone: '(216) 941-2820',  //telephone of location, if known
@@ -53,7 +53,7 @@ var clevelandData = [
     burstDuration: 0,  //if burst, defines initial burst length; beacon default to 0
     priority: 1,  //priority designation of 0 (low) or 1 (high)
     title: 'Gateway Animal Clinic', //name of message
-    type: 'vet',  //placeholder, matches icon name
+    type: 'hospital',  //placeholder, matches icon name
     address1: '1819 Abbey Avenue', //street address of location, if known
     address2: 'Cleveland, OH 44113', //city, state, zip of location, if known
     phone: '(216) 771-4414',  //telephone of location, if known
