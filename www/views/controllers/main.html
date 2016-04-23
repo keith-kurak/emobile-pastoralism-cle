@@ -2,11 +2,6 @@
 <html>
   <head>
     <title>Yomad Main</title>
-    <!-- Bootstrap mobile first tag -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Bootstrap mobile first tag -->
-    <link href="/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
-    <link href="/css/Icon.css" type-"text/css" rel="stylesheet" />
   </head>
   <body>
     <h1 class="text-center">Yomad</h1>
@@ -23,16 +18,16 @@
     <div>
       <h3 class="text-center"><u>Resources Near Your Location:</u></h3>
     </div>
-    <div>
-      <img class="center-block icon" src="/img/Glyphs png/hospital.png" />
-    </div>
   <div ng-repeat="message in messages"
     ng-click="showMessageDetail(message)">
-    <span>{{message.type}} : {{message.title}} <br /> {{message.address1}}</span>
-  </div>
-
-  <a href="/html/MoreInfo.html">Get More Information On This Resource</a>
-  <div>
-    <a href="/html/map.html">Get Map for this resource</a>
+    <div>
+      <div style="float:left;clear:left;height:50px">
+        <img src="/img/Glyphs png/hospital.png" />
+      </div>
+      <div style="float:left">
+        <div>{{message.title}}</div>
+        <div>{{message.address1}}</div>
+      </div>
+    </div>
   </div>
 </body>
