@@ -31,10 +31,22 @@ angular.module('yomadApp')
       return deferred.promise;
     }
 
+    function getMessages() {
+      return getMessagesFromSampleData();
+      //return getMessagesFromFirebase();
+    }
+
     return {
       getMessagesForArea(area) {
-        //return getMessagesFromSampleData();
-        return getMessagesFromFirebase();
+        return getMessages();
+      },
+      getMessage(messageId) {
+        return getMessages().then(function(messages) {
+          var message = _.find(messages, function(m){
+            return m.id === messageId;
+          });
+          return $q.when(message);
+        }); 
       }
     }
 

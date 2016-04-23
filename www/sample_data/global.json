@@ -1,8 +1,10 @@
 {
     "locations": [{
+        "id":"cle",
         "name": "cleveland",
         "coordinates": "",
         "messages": [{
+            "id":"0",
             "isBurst": false,
             "burstDuration": 0,
             "priority": 1,
@@ -19,6 +21,7 @@
             "lonLatCoordinates": [-81.8618, 41.415]
         },
         {
+            "id":"1",
             "isBurst": false,  
             "burstDuration": 0,  
             "priority": 1,  
@@ -35,6 +38,7 @@
           },
 
           {
+            "id":"2",
             "isBurst": false,  
             "burstDuration": 0,  
             "priority": 0, 
@@ -51,6 +55,7 @@
           },
 
           {
+            "id":"3",
             "isBurst": false,  
             "burstDuration": 0, 
             "priority": 1, 
@@ -67,6 +72,7 @@
           },
 
           {
+            "id":"4",
             "isBurst": true, 
             "burstDuration": 5, 
             "priority": 1,
@@ -83,6 +89,7 @@
           },
 
           {
+            "id":"5",
             "isBurst": true, 
             "burstDuration": 10, 
             "priority": 0,  
@@ -99,6 +106,7 @@
           },
 
           {
+            "id":"6",
             "isBurst": false,
             "burstDuration": 0,
             "priority": 0,
