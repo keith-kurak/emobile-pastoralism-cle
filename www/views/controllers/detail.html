@@ -9,9 +9,6 @@
   </head>
   <body>
     <h1 class="text-center">Yomad</h1>
-    <div>
-      <h3>Additional Information</h3>
-    </div>
     <!--
     <div>
       <img class="center-block icon" src="/img/Glyphs png/glyphicons-299-hospital.png" />
@@ -19,11 +16,15 @@
     -->
 
   <div ng-repeat="message in messages">
-    <span>{{message.title}}</span>
-    <span>{{message.address1}}</span>
-    <span>{{message.address2}}</span>
-    <span>{{message.phone}}</span>
-    <span>{{message.locationDesc}}</span>
+    <div>
+      <h3 class="text-center"><u>{{message.title}} : Additional Information</u></h3>
+    </div>
+    <br />
+    <p>{{message.address1}}</p>
+    <p>{{message.address2}}</p>
+    <p>{{message.phone}}</p>
+    <p>{{message.locationDesc}}</p>
+    <p>{{message.detailText}}</p>
   </div>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
