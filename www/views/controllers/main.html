@@ -26,7 +26,8 @@
     <div>
       <img class="center-block icon" src="/img/Glyphs png/hospital.png" />
     </div>
-  <div ng-repeat="message in messages">
+  <div ng-repeat="message in messages"
+    ng-click="showMessageDetail(message)">
     <span>{{message.type}} : {{message.title}} <br /> {{message.address1}}</span>
   </div>
 
