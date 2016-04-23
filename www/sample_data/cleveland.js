@@ -1,3 +1,6 @@
+//TODO: fields we might need:
+//id (like a PK) or a loginName,
+//date
 var clevelandData = [
   {//Hospital
     isBurst: false,  //defines message type; burst (isBurst = true) or beacon (isBurst=false)
