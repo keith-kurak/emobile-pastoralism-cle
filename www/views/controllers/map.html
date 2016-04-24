@@ -8,9 +8,15 @@
     </style>
     <title>Cleveland Map</title>
   </head>
-    <div>maps should go here</div>
     <img ng-src="img/Glyphs png/map.png" class="icon" src="img/Glyphs png/map.png">
     <h2>Points of interest</h2>
+    <div class="row">
+                <div class="col-md-2 example">
+                    NASA Layer (Must zoom out first)<br>
+                    <button id="addnasaLayer" class="btn btn-primary btn-xs">Add</button>
+                    <button id="removenasaLayer" class="btn btn-danger btn-xs">Remove</button>
+                </div>
+            </div>
     <div id="map" class="map"></div>
     <div>
       <a href="#/">Home</a>
@@ -172,6 +178,77 @@
           zoom: 13
         })
       });
+      
+      // Create two layers but let user add them to the map
+            var layerOSM = new ol.layer.Tile({
+                source: new ol.source.OSM()
+            });
+
+            //var layerMQ = new ol.layer.Tile({
+            //    source: new ol.source.MapQuest({
+            //        layer: 'osm'
+            //    })
+            //});
+            
+            //var city = new ol.Layer.XYZ(
+            //    "clouds",
+            //    "http://${s}.tile.openweathermap.org/map/clouds/${z}/${x}/${y}.png",
+            //    {
+            //        isBaseLayer: false,
+            //        opacity: 0.7,
+            //        sphericalMercator: true
+            //    }
+            //);
+            
+            //var city = new ol.layer.Vector.OWMWeather("Weather");
+            
+            
+            var city = new ol.layer.Image({
+                extent: [-13884991, 2870341, -7455066, 6338219],
+                source: new ol.source.ImageWMS({
+                  url: 'http://demo.boundlessgeo.com/geoserver/wms',
+                  params: {'LAYERS': 'topp:states'},
+                  serverType: 'geoserver'
+                })
+              });
+              
+                  
+                  var source = new ol.source.XYZ({
+                    url: "//map1{a-c}.vis.earthdata.nasa.gov/wmts-webmerc/" +
+                        "MODIS_Terra_CorrectedReflectance_TrueColor/default/2013-06-15/" +
+                        "GoogleMapsCompatible_Level9/{z}/{y}/{x}.jpg"
+                });
+                
+                var source = new ol.source.XYZ({
+                url: "//map1{a-c}.vis.earthdata.nasa.gov/wmts-webmerc/" +
+                    "MODIS_Terra_CorrectedReflectance_TrueColor/default/2016-04-23/" +
+                    "GoogleMapsCompatible_Level9/{z}/{y}/{x}.jpg"
+            });
+
+            var nasaLayer = new ol.layer.Tile({source: source,
+                                               opacity: 0.5,
+                                               });
+      
+      $(document).ready(function() {
+                $('#addOSM').on('click', function() {
+                    map.addLayer(layerOSM);
+                });
+                $('#removeOSM').on('click', function() {
+                    map.removeLayer(layerOSM);
+                });
+                $('#addMQ').on('click', function() {
+                    map.addLayer(layerMQ);
+                });
+                $('#removeMQ').on('click', function() {
+                    map.removeLayer(layerMQ);
+                });
+                $('#addnasaLayer').on('click', function() {
+                    map.addLayer(nasaLayer);
+                });
+                $('#removenasaLayer').on('click', function() {
+                    map.removeLayer(nasaLayer);
+                });
+            }); 
     </script>
 <div style="float:left">
     <div>{{message.title}}</div>
