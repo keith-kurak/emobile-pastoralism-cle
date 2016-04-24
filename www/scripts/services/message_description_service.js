@@ -4,7 +4,7 @@ angular.module('yomadApp')
   .service('messageDescriptionService', ['$q', function messageDescriptionService($q) {
 
     return {
-      getDescriptionForMessage(message) {
+      getDescriptionForMessage: function(message) {
         if(message.priority > 5){
           var pMsg = "!! ";
         }

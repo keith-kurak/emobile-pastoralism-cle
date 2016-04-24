@@ -24,15 +24,15 @@ angular.module('yomadApp')
     }
 
     return {
-      getMessagesForLocation(locationId) {
+      getMessagesForLocation: function(locationId) {
         return getMessagesForLocation(locationId);
       },
-      getMessage(locationId, messageId) {
+      getMessage: function(locationId, messageId) {
         return getMessagesForLocation(locationId).then(function(messages) {
           return $q.when(messages[messageId]);
         });
       },
-      getLocations() {
+      getLocations: function() {
         return dataService.getAppData().then(function(data) {
           var locations = _.map(data.locations, function(location, key) {
             return {
@@ -44,7 +44,7 @@ angular.module('yomadApp')
           return $q.when(locations);
         });
       },
-      getLocationForId(locationId) {
+      getLocationForId: function(locationId) {
         return dataService.getAppData().then(function(data) {
           var locations = _.map(data.locations, function(location, key) {
             return {

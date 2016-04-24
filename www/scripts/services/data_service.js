@@ -36,7 +36,7 @@ angular.module('yomadApp')
     }
 
     return {
-      getAppData() {
+      getAppData: function() {
         //switch which one is uncommented in order to swap between sample local data and online data
         return getFirebaseData();
         //return getSampleData();
