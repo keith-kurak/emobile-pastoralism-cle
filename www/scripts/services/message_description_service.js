@@ -14,7 +14,7 @@ angular.module('yomadApp')
 
         if(message.isBurst && message.type === "map") {
           return pMsg + message.user + ": " + message.locationDesc;
-        } else if(message.isBurst && message.type === "land-drought") {
+        } else if(message.isBurst && message.id === "land-drought") {
           return pMsg + message.user + ": " + message.locationDesc;
         } else if(message.isBurst) {
           return message.locationDesc;
