@@ -1,11 +1,11 @@
 var message_categories = [
   {
-    burstID = "weather",
+    categoryId = "weather",
     burstName = "Weather",
     color = "red",
     options: [
       {
-        opID = "wind",
+        opID = "weather-wind",
         opName = "High Wind",
         opPriority = 6,
         color = "red"
