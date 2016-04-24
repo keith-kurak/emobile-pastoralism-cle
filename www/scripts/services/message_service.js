@@ -12,7 +12,7 @@ angular.module('yomadApp')
         var message = messages[m];
         message.localIconPath = iconService.getIconPathForMessage(message);
         //var a = moment('2016-01-01');
-        message.relativeTime = "Hi!"
+        message.relativeTime = "1Hr ago"
       }
       return messages;
     }
