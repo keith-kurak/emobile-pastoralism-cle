@@ -15,6 +15,12 @@ var message_categories = [
         name : "Snowstorm",
         priority : 8,
         color : "red"
+      },
+      {
+        id: "weather-storm",
+        name: "Storm",
+        priority: 8,
+        color: "red"
       }
     ]
   },
@@ -55,6 +61,18 @@ var message_categories = [
         name : "Drought",
         priority : 8,
         color : "red"
+      },
+      {
+        id: "land-pest",
+        name: "Pest Infestation",
+        priority: 6,
+        color: "red"
+      },
+      {
+        id: "land-deforest",
+        name: "Deforestation",
+        priority: 5,
+        color: "red"
       }
     ]
   },
@@ -75,6 +93,12 @@ var message_categories = [
         name : "Medicinal Herbs",
         priority : 2,
         color : "green"
+      },
+      {
+        id: "market-food",
+        name: "Food Market",
+        priority: 5,
+        color: "green"
       }
     ]
   },
