@@ -1,8 +1,9 @@
-var message_types = [
+var message_categories = [
   {
     burstID = "weather",
     burstName = "Weather",
-    color = "red"[
+    color = "red",
+    options: [
       {
         opID = "wind",
         opName = "High Wind",
@@ -15,7 +16,8 @@ var message_types = [
         opPriority = 8,
         color = "red"
       }
-    ]},
+    ]
+  },
 
   {
     burstID = "warning",
