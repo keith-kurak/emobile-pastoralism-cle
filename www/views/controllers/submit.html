@@ -8,7 +8,7 @@
 <div ng-repeat="messageCategory in messageCategories">
   <div class="message-frame" ng-click="categoryClicked(messageCategory)">
     <div class="message-icon-container">
-      <img ng-src="img/Glyphs png/{{messageCategory.categoryId}}.png" ng-class="'icon-style-' + messageCategory.color">
+      <img ng-src="img/Glyphs png/{{messageCategory.id}}.png" ng-class="'icon-style-' + messageCategory.color">
     </div>
     <div class="message-container">
       <h3 class="text-style">{{messageCategory.name}}</h3>
