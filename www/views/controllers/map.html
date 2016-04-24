@@ -17,6 +17,17 @@
                     <button id="addnasaLayer" class="btn btn-primary btn-xs">Add</button>
                     <button id="removenasaLayer" class="btn btn-danger btn-xs">Remove</button>
                 </div>
+                 <div class="col-md-2 example">
+                    Night Layer <br>
+                    <button id="addnightLayer" class="btn btn-primary btn-xs">Add</button>
+                    <button id="removenightLayer" class="btn btn-danger btn-xs">Remove</button>
+                </div>
+                <div class="col-md-2 example">
+                    Rain Layer <br>
+                    <button id="addrainLayer" class="btn btn-primary btn-xs">Add</button>
+                    <button id="removerainLayer" class="btn btn-danger btn-xs">Remove</button>
+                </div>
+               
             </div>
     <div id="map" class="map"></div>
      
@@ -64,6 +75,16 @@
                     }
                   }
             console.log(locationTest)
+            console.log(window.messageService)
+            /*
+            console.log(this)
+            debugger;
+            result.then(function(data) { 
+            //use data here
+            });
+            console.log(window.messageService)
+            debugger;
+            */
             // Icons
             var icons = [
                 "img/Glyphs png/snowflake.png",
@@ -351,6 +372,30 @@
             var nasaLayer = new ol.layer.Tile({source: source,
                                                opacity: 0.5,
                                                });
+            var nightsource = new ol.source.XYZ({
+                url: "//map1{a-c}.vis.earthdata.nasa.gov/wmts-webmerc/" +
+                    //"ASTER_GDEM_Color_Index/default/2016-04-23/" +
+                    //"GoogleMapsCompatible_Level9/{z}/{y}/{x}.png"
+                    "VIIRS_CityLights_2012/default/"+
+                    "GoogleMapsCompatible_Level8/{z}/{y}/{x}.jpg"
+                    //"AIRS_Precipitation_Day/default/2016-04-23/"+
+                    //"GoogleMapsCompatible_Level6/{z}/{y}/{x}.png"
+            });
+
+            var nightLayer = new ol.layer.Tile({source: nightsource,
+                                               opacity: 0.5,
+                                               });
+            var rainsource = new ol.source.XYZ({
+                url: "//map1{a-c}.vis.earthdata.nasa.gov/wmts-webmerc/" +
+                    //"ASTER_GDEM_Color_Index/default/2016-04-23/" +
+                    //"GoogleMapsCompatible_Level9/{z}/{y}/{x}.png"
+                    "AIRS_Precipitation_Day/default/2016-04-23/"+
+                    "GoogleMapsCompatible_Level6/{z}/{y}/{x}.png"
+            });
+
+            var rainLayer = new ol.layer.Tile({source: rainsource,
+                                               opacity: 0.5,
+                                               });
                                                
       
       $(document).ready(function() {
@@ -378,6 +423,19 @@
                 $('#removefeaturesLayer').on('click', function() {
                     map.removeLayer(featuresLayer);
                 });
+                $('#addnightLayer').on('click', function() {
+                    map.addLayer(nightLayer);
+                });
+                $('#removenightLayer').on('click', function() {
+                    map.removeLayer(nightLayer);
+                });
+                $('#addrainLayer').on('click', function() {
+                    map.addLayer(rainLayer);
+                });
+                $('#removerainLayer').on('click', function() {
+                    map.removeLayer(rainLayer);
+                });
+                
             }); 
             
             
