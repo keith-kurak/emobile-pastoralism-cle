@@ -15,15 +15,18 @@
   ng-click="showMessageDetail(message)">
   <div class="message-frame">
     <div class="message-icon-container">
-      <div ng-if="message.isBurst">
-        <span class="helper"></span>
-        <img src="img/Glyphs png/24HrAlert.png" class="burstIcon" />
-      </div>
       <img ng-src="{{message.localIconPath}}" class="icon"/>
+
     </div>
     <div class="message-container">
       <div><h4>{{message.title}}</h4></div>
-      <div><h5>{{message.address1}}<h5></div>
+      <div ng-if="message.isBurst != true"><h5>{{message.address1}}<h5></div>
+      <div ng-if="message.isBurst"><h5>{{message.locationDesc}}</h5></div>
+        <div ng-if="message.isBurst">
+          <span class="helper"></span>
+          <img src="img/Glyphs png/24HrAlert.png" class="burstIcon" />
+          <span>{{message.date}}</span>
+        </div>
     </div>
   </div>
 </div>
