@@ -22,6 +22,8 @@
 .message-icon-container {
   float:left;
   clear:left;
+  margin-right: 5px;
+  margin-left: 10px;
 }
 
 .message-container {

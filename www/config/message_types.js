@@ -20,7 +20,7 @@ var message_categories = [
   },
 
   {
-    burstID : "warning",
+    categoryId : "warning",
     name : "Warning",
     color : "red",
     options: [
@@ -40,7 +40,7 @@ var message_categories = [
   },
 
   {
-    burstID : "land",
+    categoryId : "land",
     name : "Land",
     color : "green",
     options: [
@@ -60,7 +60,7 @@ var message_categories = [
   },
 
   {
-    burstID : "market",
+    categoryId : "market",
     name : "Market",
     color : "green",
     options: [
@@ -80,7 +80,7 @@ var message_categories = [
   },
 
   {
-    burstID : "map",
+    categoryId : "map",
     name : "Location",
     color : "blue"
   }

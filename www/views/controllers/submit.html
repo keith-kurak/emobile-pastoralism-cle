@@ -1,104 +1,17 @@
-<!--there should be a form for submitting a message-->
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Yomad Submit</title>
-    <!-- Bootstrap mobile first tag -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Bootstrap mobile first tag -->
-    <link href="/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
-    <style>
-    .icon-style{
-      margin:20px;
-      float:left;
-      width:42px;
-      height:42px;
-      border:3px;
-      border-style: solid;
-      border-color:black;
-    }
-      .icon-style-blue{
-        margin:10px;
-        float:left;
-        width:42px;
-        height:42px;
-        border:3px;
-        border-style: solid;
-        border-color:blue;
-      }
-      .icon-style-red{
-        margin:10px;
-        float:left;
-        width:42px;
-        height:42px;
-        border:3px;
-        border-style: solid;
-        border-color:red;
-      }
-      .icon-style-green{
-        margin:10px;
-        float:left;
-        width:42px;
-        height:42px;
-        border:3px;
-        border-style: solid;
-        border-color:green;
-      }
-.text-style{
-  margin-top:20px;
-}
-  </style>
-  </head>
-  <body>
-    <h1 class="text-center">Yomad</h1>
-    <!--
-    <div>
-      <img class="center-block icon" src="/img/Glyphs png/glyphicons-299-hospital.png" />
+<header>
+  <span back-button></span>
+  <span><h1 class="text-center">Post</h1></span>
+</header>
+<div>
+  <h3 class="text-center">Choose Category</h3>
+</div>
+<div ng-repeat="messageCategory in messageCategories">
+  <div class="message-frame" ng-click="categoryClicked(messageCategory)">
+    <div class="message-icon-container">
+      <img ng-src="img/Glyphs png/{{messageCategory.categoryId}}.png" ng-class="'icon-style-' + messageCategory.color">
     </div>
-    -->
-    <div>
-      <h3 class="text-center"><u>Yo! What is Your Message?</u></h3>
+    <div class="message-container">
+      <h3 class="text-style">{{messageCategory.name}}</h3>
     </div>
-    <br />
-    <div class="container">
-    <a href="../main.html">
-      <img src="../../img/Glyphs png/weather.png" alt="weather warning" class="icon-style-red">
-    </a>
-    <h4 class="text-style">Weather Warning!</h4>
-    </div>
-
-    <div class="container">
-    <a href="../main.html">
-      <img src="../../img/Glyphs png/exclamation.png" alt="exclamation" class="icon-style-red">
-    </a>
-    <h4 class="text-style">Warning!</h4>
-    </div>
-
-    <div class="container">
-    <a href="../main.html">
-      <img src="../../img/Glyphs png/land.png" alt="land info" class="icon-style-green">
-    </a>
-    <h4 class="text-style">Land Status</h4>
-    </div>
-
-    <div class="container">
-    <a href="../main.html">
-      <img src="../../img/Glyphs png/market.png" alt="market" class="icon-style-blue">
-    </a>
-    <h4 class="text-style">Market Information</h4>
-    </div>
-
-    <div class="container">
-    <a href="../main.html">
-      <img src="../../img/Glyphs png/infosign.png" alt="information" class="icon-style-blue">
-    </a>
-    <h4 class="text-style">Information</h4>
-    </div>
-
-
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="js/bootstrap.min.js"></script>
-
-</body>
+  </div>
+</div>
