@@ -3,3 +3,7 @@
 [x-ng-click] {
   cursor: pointer;
 }
+
+#locationSelect {
+  cursor: pointer;
+}
