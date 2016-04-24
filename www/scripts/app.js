@@ -30,6 +30,10 @@
         templateUrl: 'views/controllers/submit.html',
         controller: 'SubmitCtrl'
       })
+      .when('/:locationId/submit/:messageCategoryId', {
+        templateUrl: 'views/controllers/submit_detail.html',
+        controller: 'SubmitDetailCtrl'
+      })
       .when('/:locationId/:messageId', {
         templateUrl: 'views/controllers/detail.html',
         controller: 'DetailCtrl'

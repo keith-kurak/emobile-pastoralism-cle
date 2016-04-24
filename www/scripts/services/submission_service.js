@@ -6,9 +6,12 @@ angular.module('yomadApp')
     var myFirebaseRef = new Firebase("https://yomad.firebaseio.com/");
 
     return {
-      submitMessage(messageType) {
+      submitMessage: function(location, messageType) {
         return $q.when();
       },
+      getMessageCategories: function() {
+        return $q.when(message_categories);
+      }
     }
 
   }]);
