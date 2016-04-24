@@ -21,6 +21,12 @@ var message_categories = [
         name: "Storm",
         priority: 8,
         color: "red"
+      },
+      {
+        id: "weather-flood",
+        name: "Flood",
+        priority: 5,
+        color: "red"
       }
     ]
   },
