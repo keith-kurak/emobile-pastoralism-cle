@@ -53,3 +53,44 @@
   float: left;
   font-size: 12px;
 }
+
+/*message icon styles */
+.icon-style {
+  margin:20px;
+  float:left;
+  width:42px;
+  height:42px;
+  border:3px;
+  border-style: solid;
+  border-color:black;
+}
+.icon-style-blue{
+  margin:10px;
+  float:left;
+  width:42px;
+  height:42px;
+  border:3px;
+  border-style: solid;
+  border-color:blue;
+}
+.icon-style-red{
+  margin:10px;
+  float:left;
+  width:42px;
+  height:42px;
+  border:3px;
+  border-style: solid;
+  border-color:red;
+}
+.icon-style-green{
+  margin:10px;
+  float:left;
+  width:42px;
+  height:42px;
+  border:3px;
+  border-style: solid;
+  border-color:green;
+}
+.text-style{
+  margin-top:20px;
+}
