@@ -1,38 +1,40 @@
 'use strict';
 
 angular.module('yomadApp')
-  .service('messageService', ['$q', 'iconService', 'dataService', 'messageDescriptionService', function messageService($q, iconService, dataService, messageDescriptionService) {
+  .factory('messageService', ['$q', 'iconService', 'dataService', 'messageDescriptionService', function messageService($q, iconService, dataService, messageDescriptionService) {
 
     var myFirebaseRef = new Firebase("https://yomad.firebaseio.com/");
 
-    //TODO: put this in another service, return the entire location instead of just an array of messages from this service
-    function mungeLocation(location) {
-      var messages = location.messages;
-      for(var m in messages) {
-        var message = messages[m];
-        message.localIconPath = iconService.getIconPathForMessage(message);
-        message.description = messageDescriptionService.getDescriptionForMessage(message);
-        message.relativeTime = "1Hr ago"
+    function MessageService() {
+      //TODO: put this in another service, return the entire location instead of just an array of messages from this service
+      this._mungeLocation = function(location) {
+        var messages = location.messages;
+        for(var m in messages) {
+          var message = messages[m];
+          message.localIconPath = iconService.getIconPathForMessage(message);
+          message.description = messageDescriptionService.getDescriptionForMessage(message);
+          message.relativeTime = "1Hr ago"
+        }
+        return messages;
       }
-      return messages;
-    }
 
-    function getMessagesForLocation(locationId) {
-      return dataService.getAppData().then(function(data) {
-        return $q.when(mungeLocation(data.locations[locationId]));
-      });
-    }
+      this._getMessagesForLocation = function(locationId) {
+        return dataService.getAppData().then(function(data) {
+          return $q.when(this._mungeLocation(data.locations[locationId]));
+        }.bind(this));
+      }
 
-    return {
-      getMessagesForLocation: function(locationId) {
-        return getMessagesForLocation(locationId);
-      },
-      getMessage: function(locationId, messageId) {
-        return getMessagesForLocation(locationId).then(function(messages) {
+      this.getMessagesForLocation = function(locationId) {
+        return this._getMessagesForLocation(locationId).then(function(messages) {
+          return $q.when(messages)
+        });
+      };
+      this.getMessage = function(locationId, messageId) {
+        return this._getMessagesForLocation(locationId).then(function(messages) {
           return $q.when(messages[messageId]);
         });
-      },
-      getLocations: function() {
+      };
+      this.getLocations = function() {
         return dataService.getAppData().then(function(data) {
           var locations = _.map(data.locations, function(location, key) {
             return {
@@ -43,8 +45,8 @@ angular.module('yomadApp')
           });
           return $q.when(locations);
         });
-      },
-      getLocationForId: function(locationId) {
+      };
+      this.getLocationForId = function(locationId) {
         return dataService.getAppData().then(function(data) {
           var locations = _.map(data.locations, function(location, key) {
             return {
@@ -55,7 +57,13 @@ angular.module('yomadApp')
           });
           return $q.when(_.find(locations, function(l) {return l.id === locationId}));
         });
-      }
+      };
     }
+
+    var messageService = new MessageService();
+
+    window.messageService = messageService;
+
+    return messageService;
 
   }]);

@@ -29,6 +29,9 @@
 .message-container {
   float:left;
   vertical-align: top;
+  white-space: nowrap;                  
+  overflow: hidden;              /* "overflow" value must be different from "visible" */ 
+  text-overflow: ellipsis;
 }
 
 .message-frame img {

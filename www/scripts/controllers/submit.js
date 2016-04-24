@@ -22,6 +22,7 @@ angular.module('yomadApp')
       } else { //otherwise just post
         submissionService.submitMessage($scope.locationId, messageCategory).then(function() {
           goBackToLocation();
+          alert('Post submitted!');
         });
       }
     }
