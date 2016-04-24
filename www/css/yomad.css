@@ -96,3 +96,12 @@
 .text-style{
   margin-top:20px;
 }
+
+#burstHeading {
+  border: collapse;
+  margin: 10px 0px 0px 0px;
+}
+
+#ngBurstIcon {
+  line-height: 40px;
+}

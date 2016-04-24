@@ -21,8 +21,8 @@
     <div class="message-container">
       <div><h4>{{message.title}}</h4></div>
       <div ng-if="message.isBurst != true"><h5>{{message.address1}}<h5></div>
-      <div ng-if="message.isBurst"><h5>{{message.locationDesc}}</h5></div>
-        <div ng-if="message.isBurst">
+      <div ng-if="message.isBurst"><h5 id="burstHeading">{{message.locationDesc}}</h5></div>
+        <div ng-if="message.isBurst" id="ngBurstIcon">
           <span class="helper"></span>
           <img src="img/Glyphs png/24HrAlert.png" class="burstIcon" />
           <span>{{message.date}}</span>
