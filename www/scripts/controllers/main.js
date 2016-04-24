@@ -8,7 +8,7 @@ angular.module('yomadApp')
     });
 
     $scope.showMessageDetail = function(message){
-      var path = '/main/'+message.id;
+      var path = '/main/'+_.findKey($scope.messages, message);
       $location.path(path);
     }
 

@@ -5,39 +5,6 @@
         {
             "name": "cleveland",
             "coordinates": "",
-            "messages": {
-                    "0":{
-                        "isBurst": false,
-                        "burstDuration": 0,
-                        "priority": 1,
-                        "title": "Fairview Hospital",
-                        "type": "hospital",
-                        "address1": "18101 Lorain Avenue",
-                        "address2": "Cleveland, OH 44111",
-                        "phone": "(216) 476-7000",
-                        "mapUrl": "",
-                        "detailImgUrl": "",
-                        "detailText": "",
-                        "locationDesc": "East of the Rocky River, South of I-90",
-                        "iconUrl": "",
-                        "lonLatCoordinates": [-81.8618, 41.415]
-                    },
-                    "1": {
-                        "isBurst": false,  
-                        "burstDuration": 0,  
-                        "priority": 1,  
-                        "title": "Cleveland Police Department", 
-                        "type": "police",  
-                        "address1": "6600 Detroit Avenue",
-                        "address2": "Cleveland, OH 44102", 
-                        "phone": "(216) 348-7117", 
-                        "mapUrl": "", 
-                        "detailImgUrl": "", 
-                        "detailText": "", 
-                        "locationDesc": "South of Lake Erie, West of Cuyahoga River", 
-                        "iconUrl": ""
-                      }
-                    }
             "messages":
             {
                 "0":
@@ -128,7 +95,8 @@
                     "detailText": "",
                     "locationDesc": "Lake Erie lakefront",
                     "iconUrl": "",
-                    "lonLatCoordinates": [-81.685202, 41.519377]
+                    "lonLatCoordinates": [-81.685202, 41.519377],
+                    "date": "2016-04-23T00:38:06.624Z"
                 },
                 "5":
                 {
@@ -146,7 +114,8 @@
                     "detailText": "",
                     "locationDesc": "Edgewater Park, South of Lake Erie",
                     "iconUrl": "",
-                    "lonLatCoordinates": [-81.747262, 41.486767]
+                    "lonLatCoordinates": [-81.747262, 41.486767],
+                    "date": "2016-04-23T00:38:06.624Z"
                 },
                 "6":
                 {
@@ -164,7 +133,8 @@
                     "detailText": "",
                     "locationDesc": "Ohio City, South of Cuyahoga River",
                     "iconUrl": "",
-                    "lonLatCoordinates": [-81.705266, 41.4846426]
+                    "lonLatCoordinates": [-81.705266, 41.4846426],
+                    "date": "2016-04-23T00:38:06.624Z"
                 },
                 "7":
                 {
@@ -182,7 +152,8 @@
                     "detailText": "",
                     "locationDesc": "Cuyahoga Valley National Park",
                     "iconUrl": "",
-                    "lonLatCoordinates": [-81.5782833, 41.2728948]
+                    "lonLatCoordinates": [-81.5782833, 41.2728948],
+                    "date": "2016-04-23T00:38:06.624Z"
                 },
                 "8":
                 {
