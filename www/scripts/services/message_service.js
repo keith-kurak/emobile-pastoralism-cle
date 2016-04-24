@@ -13,7 +13,7 @@ angular.module('yomadApp')
           var message = messages[m];
           message.localIconPath = iconService.getIconPathForMessage(message);
           message.description = messageDescriptionService.getDescriptionForMessage(message);
-          message.relativeTime = "1Hr ago"
+          message.relativeTime = moment(message.date).fromNow();
         }
         return messages;
       }
@@ -26,7 +26,11 @@ angular.module('yomadApp')
 
       this.getMessagesForLocation = function(locationId) {
         return this._getMessagesForLocation(locationId).then(function(messages) {
-          return $q.when(messages)
+          var messages = _.map(messages, function(message, key) {
+            message.id = key;
+            return message;
+          });
+          return $q.when(messages);
         });
       };
       this.getMessage = function(locationId, messageId) {

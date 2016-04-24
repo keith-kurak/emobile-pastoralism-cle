@@ -9,7 +9,7 @@ angular.module('yomadApp')
         "date": (new Date()).toJSON(),
         "isBurst": true,
         "burstDuration": 1,
-        "priority": 1,
+        "priority": messageType.priority,
         "title": messageType.name,
         "type": messageType.id,
         "address1": "",

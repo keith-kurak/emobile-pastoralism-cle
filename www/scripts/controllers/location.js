@@ -16,7 +16,7 @@ angular.module('yomadApp')
     $scope.getMessagesForLocation();
 
     $scope.showMessageDetail = function(message){
-      var path = '/' + $scope.location.id + '/' +_.findKey($scope.messages, message);
+      var path = '/' + $scope.location.id + '/' +message.id
       $location.path(path);
     }
 

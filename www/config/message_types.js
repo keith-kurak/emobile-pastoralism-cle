@@ -112,6 +112,7 @@ var message_categories = [
   {
     id : "map",
     name : "Location",
+    priority: 0,
     color : "blue"
   }
 ]

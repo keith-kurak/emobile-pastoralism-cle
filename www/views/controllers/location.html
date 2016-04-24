@@ -11,7 +11,7 @@
     Post
   </span>
 </div>
-<div ng-repeat="message in messages"
+<div ng-repeat="message in messages | orderBy: 'priority': true"
   ng-click="showMessageDetail(message)">
   <div class="message-frame">
     <div class="message-icon-container">
