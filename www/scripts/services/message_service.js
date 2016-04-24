@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('yomadApp')
-  .service('messageService', ['$q', 'iconService', function messageService($q, iconService) {
+  .service('messageService', ['$q', 'iconService', 'dataService', function messageService($q, iconService, dataService) {
 
     var myFirebaseRef = new Firebase("https://yomad.firebaseio.com/");
 
@@ -15,25 +15,10 @@ angular.module('yomadApp')
       return messages;
     }
 
-    function getMessagesFromSampleData() {
-      var deferred = $q.defer();
-      $.getJSON("sample_data/global_revised.json", function(json) {
-        return deferred.resolve(mungeLocation(json.locations["cle"]));
-      });
-      return deferred.promise;
-    }
-
-    function getMessagesFromFirebase() {
-      var deferred = $q.defer();
-      myFirebaseRef.once("value", function(data) {
-        return deferred.resolve(mungeLocation(data.val().locations["cle"]));
-      });
-      return deferred.promise;
-    }
-
     function getMessages() {
-      //return getMessagesFromSampleData();
-      return getMessagesFromFirebase();
+      return dataService.getAppData().then(function(data) {
+        return $q.when(mungeLocation(data.locations["cle"]));
+      });
     }
 
     return {
