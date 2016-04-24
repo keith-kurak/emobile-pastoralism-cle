@@ -12,7 +12,8 @@ fs.readFile(myArgs[0], 'utf8', function (err, data) {
   myFirebaseRef.push().set(messageToPost.message);
 
   //this is a total hack. Firebase keeps the connection open and doesn't let it close, and I can't find a way in its API to close a connection.
-  ////if you close the connection too fast then it doesn't submit the message.
+  ////if you don't close the connection fast enough, it doesn't post the message.
+  setTimeout(function() {
     process.exit();
   }, 2000);
 });
