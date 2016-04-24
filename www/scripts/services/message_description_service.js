@@ -9,12 +9,12 @@ angular.module('yomadApp')
           var pMsg = "!! ";
         }
         else{
-          var pMsg = "";
+          var pMsg = "hi ";
         }
 
         if(message.isBurst && message.type === "map") {
           return pMsg + message.user + ": " + message.locationDesc;
-        } else if(message.isBurst && message.id === "land-drought") {
+        } else if(message.isBurst && message.type === "land") {
           return pMsg + message.user + ": " + message.locationDesc;
         } else if(message.isBurst) {
           return message.locationDesc;
