@@ -25,6 +25,9 @@
     ng-click="showMessageDetail(message)">
     <div>
       <div style="float:left;clear:left">
+        <div ng-if="message.isBurst">
+          <img src="img/Glyphs png/24HrAlert.png" class="icon" />
+        </div>
         <img ng-src="{{message.localIconPath}}" class="icon"/>
       </div>
       <div style="float:left">
