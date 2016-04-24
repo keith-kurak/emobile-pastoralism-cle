@@ -1,11 +1,15 @@
 'use strict';
 
 angular.module('yomadApp')
-  .controller('MainCtrl', ['$scope', '$window', '$q', 'messageService', '$location', function ($scope, $window, $q, messageService, $location) {
+  .controller('MainCtrl', ['$scope', '$window', '$q', 'messageService', '$location', '$rootScope', function ($scope, $window, $q, messageService, $location, $rootScope) {
 
-    messageService.getMessagesForArea('put area/ region here').then(function(messages) {
-      $scope.messages = messages;
-    });
+    function getMessages() {
+      messageService.getMessagesForArea('put area/ region here').then(function(messages) {
+        $scope.messages = messages;
+      });
+    }
+
+    getMessages();
 
     $scope.showMessageDetail = function(message){
       var path = '/main/'+_.findKey($scope.messages, message);
@@ -21,4 +25,8 @@ angular.module('yomadApp')
       var path = '/submit';
       $location.path(path);
     }
+
+    $rootScope.$on('data-updated', function(event, args) {
+      getMessages();
+    });
   }]);
