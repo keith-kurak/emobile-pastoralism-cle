@@ -1,5 +1,6 @@
   <head>
     <link rel="stylesheet" href="http://openlayers.org/en/v3.15.1/css/ol.css" type="text/css">
+    <script src="http://openlayers.org/en/v3.15.1/build/ol.js" type="text/javascript"></script>
     <style>
       .map {
         height: 400px;
@@ -18,9 +19,11 @@
                 </div>
             </div>
     <div id="map" class="map"></div>
+     
     <div>
       <a href="#/">Home</a>
     </div>
+    
     <script type="text/javascript">
     
     var locationTest = 
@@ -75,6 +78,8 @@
                 ["img/Glyphs png/land.png",[-81.888813, 41.411275]],
                 ["img/Glyphs png/police.png",[-81.8504, 41.4124]],
             ];
+            
+            console.log()
 
             // Create random point features
             var i, lat, lon, geom, feature, features = [], style, rnd;
@@ -113,6 +118,49 @@
 
                 feature.setStyle(style);
             }
+            
+            /*
+            coord = [-81.8618, 43.415] 
+                   console.log(coord)
+                    geom = new ol.geom.Point(
+                        ol.proj.transform(coord, 'EPSG:4326', 'EPSG:3857')
+                    );
+
+                    feature = new ol.Feature(geom);
+                    features.push(feature);
+                    style = [
+                        new ol.style.Style({
+                            image: new ol.style.Icon(({
+                                scale: 1,
+                                anchor: [0.5, 1],
+                                anchorXUnits: 'fraction',
+                                anchorYUnits: 'fraction',
+                                //opacity: rnd,
+                                src: "img/Glyphs png/infosign.png"
+                            }))
+                        }),
+                        new ol.style.Style({
+                            image: new ol.style.Circle({
+                                radius: 5,
+                                fill: new ol.style.Fill({
+                                    color: 'rgba(230,120,30,0.7)'
+                                })
+                            })
+                        })
+                    ];
+
+                    feature.setStyle(style);
+
+                    // Source and vector layer
+                    var featureSource = new ol.source.Vector({
+                        features: features
+                    });
+
+                    var featuresLayer = new ol.layer.Vector({
+                        source: featureSource
+                    });
+                    */
+            
             /*
             for(i=0; i< 4; i++) {
                 coord = icon_dict_list[i][1]
@@ -164,6 +212,10 @@
             var vectorLayer = new ol.layer.Vector({
                 source: vectorSource
             });
+      var view = new ol.View({
+          center: ol.proj.fromLonLat([-81.8618, 41.415]), //cleveland
+          zoom: 13
+        })
       var map = new ol.Map({
         target: 'map',
         layers: [
@@ -171,13 +223,84 @@
             source: new ol.source.MapQuest({layer: 'sat'})
             
           }),
-          vectorLayer  //The Icon layer
+          vectorLayer, //The Icon layer
+          //featuresLayer  
         ],
-        view: new ol.View({
-          center: ol.proj.fromLonLat([-81.8618, 41.415]), //cleveland
-          zoom: 13
-        })
+        view: view
       });
+      
+      var geolocation = new ol.Geolocation({
+                  projection: view.getProjection()
+                });
+       function el(id) {
+                  return document.getElementById(id);
+                }
+
+                //el('track').addEventListener('change', function() {
+                //  geolocation.setTracking(this.checked);
+                //});
+
+                // update the HTML page when the position changes.
+                geolocation.on('change', function() {
+                  el('coordinates').innerText = geolocation.getPosition();
+                  el('accuracy').innerText = geolocation.getAccuracy() + ' [m]';
+                  el('altitude').innerText = geolocation.getAltitude() + ' [m]';
+                  el('altitudeAccuracy').innerText = geolocation.getAltitudeAccuracy() + ' [m]';
+                  el('heading').innerText = geolocation.getHeading() + ' [rad]';
+                  el('speed').innerText = geolocation.getSpeed() + ' [m/s]';
+                  console.log(featuresLayer)
+                  console.log(map)
+                  map.addLayer(featuresLayer);
+                });
+
+                // handle geolocation error.
+                geolocation.on('error', function(error) {
+                  var info = document.getElementById('info');
+                  info.innerHTML = error.message;
+                  info.style.display = '';
+                });
+
+                var accuracyFeature = new ol.Feature();
+                geolocation.on('change:accuracyGeometry', function() {
+                  accuracyFeature.setGeometry(geolocation.getAccuracyGeometry());
+                });
+
+                var positionFeature = new ol.Feature();
+                positionFeature.setStyle(new ol.style.Style({
+                  image: new ol.style.Circle({
+                    radius: 6,
+                    fill: new ol.style.Fill({
+                      color: '#3399CC'
+                    }),
+                    stroke: new ol.style.Stroke({
+                      color: '#fff',
+                      width: 2
+                    })
+                  })
+                }));
+
+                geolocation.on('change:position', function() {
+                  var coordinates = geolocation.getPosition();
+                  console.log(coordinates)
+                  coordinates = [-81.8618, 42.415] //Hack to reset this
+                  positionFeature.setGeometry(coordinates ?
+                      new ol.geom.Point(coordinates) : null);
+                });
+                var featuresSource = new ol.source.Vector({
+                features: [accuracyFeature, positionFeature]
+                });
+
+                var featuresLayer = new ol.layer.Vector({
+                    source: vectorSource
+                });
+                
+                
+                //var featuresOverlay = new ol.FeatureOverlay({
+                //  map: map,
+                //  features: [accuracyFeature, positionFeature]
+                //});
+      
+      
       
       // Create two layers but let user add them to the map
             var layerOSM = new ol.layer.Tile({
@@ -228,6 +351,7 @@
             var nasaLayer = new ol.layer.Tile({source: source,
                                                opacity: 0.5,
                                                });
+                                               
       
       $(document).ready(function() {
                 $('#addOSM').on('click', function() {
@@ -248,9 +372,14 @@
                 $('#removenasaLayer').on('click', function() {
                     map.removeLayer(nasaLayer);
                 });
+                $('#addfeaturesLayer').on('click', function() {
+                    map.addLayer(featuresLayer);
+                });
+                $('#removefeaturesLayer').on('click', function() {
+                    map.removeLayer(featuresLayer);
+                });
             }); 
+            
+            
+            
     </script>
-<div style="float:left">
-    <div>{{message.title}}</div>
-    <div>{{message.address1}}</div>
-</div>
