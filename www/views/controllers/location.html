@@ -9,16 +9,17 @@
 </div>
 <div ng-repeat="message in messages"
   ng-click="showMessageDetail(message)">
-  <div>
-    <div style="float:left;clear:left">
+  <div class="message-frame">
+    <div class="message-icon-container">
       <div ng-if="message.isBurst">
+        <span class="helper"></span>
         <img src="img/Glyphs png/24HrAlert.png" class="icon" />
       </div>
       <img ng-src="{{message.localIconPath}}" class="icon"/>
     </div>
-    <div style="float:left">
+    <div class="message-container">
       <div><h4>{{message.title}}</h4></div>
-      <div><h4>{{message.address1}}<h4></div>
+      <div><h5>{{message.address1}}<h5></div>
     </div>
   </div>
 </div>

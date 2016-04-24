@@ -7,3 +7,28 @@
 #locationSelect {
   cursor: pointer;
 }
+
+.helper {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.message-frame {
+    white-space: nowrap;
+    line-height: 60px;
+}
+
+.message-icon-container {
+  float:left;
+  clear:left;
+}
+
+.message-container {
+  float:left;
+  vertical-align: top;
+}
+
+.message-frame img {
+    vertical-align: middle;
+}
