@@ -17,6 +17,6 @@
     <select
       ng-options="location.name for location in locations track by location.id"
       ng-change="locationChanged()"
-      ng-model="selectedLocation"></select>
+      ng-model="selectedLocation" class="form-control" id="locationSelect"></select>
   </form>
 </div>
