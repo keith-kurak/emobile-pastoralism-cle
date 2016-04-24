@@ -233,7 +233,8 @@
                   "detailText": "",
                   "locationDesc": "Along Sand Run Road",
                   "iconUrl": "",
-                  "lonLatCoordinates": [-81.587534, 41.120865]
+                  "lonLatCoordinates": [-81.587534, 41.120865],
+                  "date": "2016-04-23T00:38:06.624Z"
                 },
                 "12":
                 {
@@ -251,7 +252,8 @@
                   "detailText": "",
                   "locationDesc": "Silver Lake",
                   "iconUrl": "",
-                  "lonLatCoordinates": [-81.457157, 41.158199]
+                  "lonLatCoordinates": [-81.457157, 41.158199],
+                  "date": "2016-04-23T00:38:06.624Z"
                 }
             }
         },
@@ -277,7 +279,8 @@
                   "detailText": "",
                   "locationDesc": "Monongahela Wharf Landing",
                   "iconUrl": "",
-                  "lonLatCoordinates": [-80.003925, 40.437319]
+                  "lonLatCoordinates": [-80.003925, 40.437319],
+                  "date": "2016-04-23T00:38:06.624Z"
                 },
                 "14":
                 {
@@ -307,31 +310,31 @@
                   "type": "market",
                   "address1": "Union Avenue",
                   "address2": "Pittsburgh, PA 15212",
-                  "phone": "(330) 375-3000",
+                  "phone": "",
                   "mapUrl": "",
                   "detailImgUrl": "",
                   "detailText": "",
-                  "locationDesc": "South of Little Cuyahoga River",
+                  "locationDesc": "North of Allegheny River near the triangle",
                   "iconUrl": "",
-                  "lonLatCoordinates": [-81.5017436, 41.0802274]
+                  "lonLatCoordinates": [-80.0084235, 40.4486031]
                 },
                 "16":
                 {
-                  "user":"SummaAkronHosp",
+                  "user":"MageeHosp",
                   "isBurst": false,
                   "burstDuration": 0,
                   "priority": 1,
-                  "title": "Summa Akron City Hospital",
+                  "title": "Magee-Women's Hospital of UPMC",
                   "type": "hospital",
-                  "address1": "525 E Market Street",
-                  "address2": "Akron, OH 443041",
-                  "phone": "(330) 375-3000",
+                  "address1": "300 Halket Street",
+                  "address2": "Pittsburgh, PA 15213",
+                  "phone": "(412) 641-1000",
                   "mapUrl": "",
                   "detailImgUrl": "",
                   "detailText": "",
-                  "locationDesc": "South of Little Cuyahoga River",
+                  "locationDesc": "West of Schenley Park",
                   "iconUrl": "",
-                  "lonLatCoordinates": [-81.5017436, 41.0802274]
+                  "lonLatCoordinates": [-79.9631521, 40.4370792]
                 }
             }
         }
