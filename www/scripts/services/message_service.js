@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('yomadApp')
-  .service('messageService', ['$q', 'iconService', 'dataService', function messageService($q, iconService, dataService) {
+  .service('messageService', ['$q', 'iconService', 'dataService', 'messageDescriptionService', function messageService($q, iconService, dataService, messageDescriptionService) {
 
     var myFirebaseRef = new Firebase("https://yomad.firebaseio.com/");
 
@@ -11,6 +11,7 @@ angular.module('yomadApp')
       for(var m in messages) {
         var message = messages[m];
         message.localIconPath = iconService.getIconPathForMessage(message);
+        message.description = messageDescriptionService.getDescriptionForMessage(message);
       }
       return messages;
     }
