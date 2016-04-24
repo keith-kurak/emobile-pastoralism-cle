@@ -9,6 +9,8 @@ fs.readFile(myArgs[0], 'utf8', function (err, data) {
 
   var myFirebaseRef = new Firebase('https://yomad.firebaseio.com/locations/' + messageToPost.locationId + '/messages');
 
+  messageToPost.message.date = (new Date()).toJSON();
+
   myFirebaseRef.push().set(messageToPost.message);
 
   //this is a total hack. Firebase keeps the connection open and doesn't let it close, and I can't find a way in its API to close a connection.

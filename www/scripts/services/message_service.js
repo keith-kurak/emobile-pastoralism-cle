@@ -17,8 +17,8 @@ angular.module('yomadApp')
 
     function getMessagesFromSampleData() {
       var deferred = $q.defer();
-      $.getJSON("sample_data/global.json", function(json) {
-        return deferred.resolve(mungeLocation(json.locations[0]));
+      $.getJSON("sample_data/global_revised.json", function(json) {
+        return deferred.resolve(mungeLocation(json.locations["cle"]));
       });
       return deferred.promise;
     }
@@ -26,14 +26,14 @@ angular.module('yomadApp')
     function getMessagesFromFirebase() {
       var deferred = $q.defer();
       myFirebaseRef.once("value", function(data) {
-        return deferred.resolve(mungeLocation(data.val().locations[0]));
+        return deferred.resolve(mungeLocation(data.val().locations["cle"]));
       });
       return deferred.promise;
     }
 
     function getMessages() {
-      return getMessagesFromSampleData();
-      //return getMessagesFromFirebase();
+      //return getMessagesFromSampleData();
+      return getMessagesFromFirebase();
     }
 
     return {
@@ -42,10 +42,7 @@ angular.module('yomadApp')
       },
       getMessage(messageId) {
         return getMessages().then(function(messages) {
-          var message = _.find(messages, function(m){
-            return m.id === messageId;
-          });
-          return $q.when(message);
+          return $q.when(messages[messageId]);
         }); 
       },
       getLocations() {
