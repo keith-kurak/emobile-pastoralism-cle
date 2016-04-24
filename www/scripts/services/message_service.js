@@ -15,23 +15,44 @@ angular.module('yomadApp')
       return messages;
     }
 
-    function getMessages() {
+    function getMessagesForLocation(locationId) {
       return dataService.getAppData().then(function(data) {
-        return $q.when(mungeLocation(data.locations["cle"]));
+        return $q.when(mungeLocation(data.locations[locationId]));
       });
     }
 
     return {
-      getMessagesForArea(location) {
-        return getMessages();
+      getMessagesForLocation(locationId) {
+        return getMessagesForLocation(locationId);
       },
-      getMessage(messageId) {
-        return getMessages().then(function(messages) {
+      getMessage(locationId, messageId) {
+        return getMessagesForLocation(locationId).then(function(messages) {
           return $q.when(messages[messageId]);
         }); 
       },
       getLocations() {
-        
+        return dataService.getAppData().then(function(data) {
+          var locations = _.map(data.locations, function(location, key) {
+            return {
+              id: key,
+              name: location.name,
+              coordinates: location.coordinates
+            }
+          });
+          return $q.when(locations);
+        });
+      },
+      getLocationForId(locationId) {
+        return dataService.getAppData().then(function(data) {
+          var locations = _.map(data.locations, function(location, key) {
+            return {
+              id: key,
+              name: location.name,
+              coordinates: location.coordinates
+            }
+          });
+          return $q.when(_.find(locations, function(l) {return l.id === locationId}));
+        });
       }
     }
 

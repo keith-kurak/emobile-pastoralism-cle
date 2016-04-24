@@ -11,18 +11,22 @@
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/controllers/main.html',
-        controller: 'MainCtrl'
+        templateUrl: 'views/controllers/home.html',
+        controller: 'HomeCtrl'
       })
-      .when('/main', {
-        templateUrl: 'views/controllers/main.html',
-        controller: 'MainCtrl'
+      /*.when('/home', {
+        templateUrl: 'views/controllers/home.html',
+        controller: 'HomeCtrl'
+      })*/
+      .when('/:locationId', {
+        templateUrl: 'views/controllers/location.html',
+        controller: 'LocationCtrl'
       })
-      .when('/main/:id', {
+      .when('/:locationId/:messageId', {
         templateUrl: 'views/controllers/detail.html',
         controller: 'DetailCtrl'
       })
-      .when('/map/:locationId', {
+      .when('/:locationId/map', {
         templateUrl: 'views/controllers/map.html',
         controller: 'MapCtrl'
       })
@@ -30,7 +34,7 @@
         templateUrl: 'views/controllers/settings.html',
         controller: 'SettingsCtrl'
       })
-      .when('/submit', {
+      .when('/:locationId/submit', {
         templateUrl: 'views/controllers/submit.html',
         controller: 'SubmitCtrl'
       })

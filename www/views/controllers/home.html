@@ -1,0 +1,15 @@
+<h1 class="text-center">Yomad</h1>
+<div class="form-group">
+  <form>
+    <label>Select Your Location</label>
+    <!--<select class="form-control" id="locationSelect" name="location">
+      <option value="Cleveland">Cleveland</option>
+      <option value="Akron">Akron</option>
+      <option value="Pittsburgh">Pittsburgh</option>
+    <select>-->
+    <select
+      ng-options="location.name for location in locations track by location.id"
+      ng-change="locationChanged()"
+      ng-model="selectedLocation"></select>
+  </form>
+</div>

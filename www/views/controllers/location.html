@@ -1,0 +1,24 @@
+<h1 class="text-center">{{location.name}}</h1>
+<div class="form-group">
+</div>
+<div ng-click="showMap('whatev does not matter yet')">
+  Map
+</div>
+<div ng-click="showSubmitMessage()">
+  Submit
+</div>
+<div ng-repeat="message in messages"
+  ng-click="showMessageDetail(message)">
+  <div>
+    <div style="float:left;clear:left">
+      <div ng-if="message.isBurst">
+        <img src="img/Glyphs png/24HrAlert.png" class="icon" />
+      </div>
+      <img ng-src="{{message.localIconPath}}" class="icon"/>
+    </div>
+    <div style="float:left">
+      <div><h4>{{message.title}}</h4></div>
+      <div><h4>{{message.address1}}<h4></div>
+    </div>
+  </div>
+</div>

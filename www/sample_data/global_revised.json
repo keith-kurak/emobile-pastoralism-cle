@@ -3,7 +3,7 @@
     {
         "cle":
         {
-            "name": "cleveland",
+            "name": "Cleveland",
             "coordinates": "",
             "messages":
             {
@@ -177,7 +177,7 @@
         },
         "akr":
         {
-            "name": "akron",
+            "name": "Akron",
             "coordinates": "",
             "messages":
             {
@@ -257,7 +257,7 @@
         },
         "pgh":
         {
-            "name": "pittsburgh",
+            "name": "Pittsburgh",
             "coordinates": "",
             "messages":
             {

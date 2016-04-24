@@ -1,0 +1,19 @@
+//somewhat out-of-date reference to the field in each message object
+/*
+  {//Hospital
+    isBurst: false,  //defines message type; burst (isBurst = true) or beacon (isBurst=false)
+    burstDuration: 0,  //if burst, defines initial burst length; beacon default to 0
+    priority: 1,  //priority designation of 0 (low) or 1 (high)
+    title: 'Fairview Hospital', //name of message
+    type: 'hospital',  //placeholder, matches icon name
+    address1: '18101 Lorain Avenue', //street address of location, if known
+    address2: 'Cleveland, OH 44111', //city, state, zip of location, if known
+    phone: '(216) 476-7000',  //telephone of location, if known
+    mapUrl: '', //url for map
+    detailImgUrl: '', //url for detailed image
+    detailText: '', //additional information about message
+    locationDesc: 'East of the Rocky River, South of I-90', //additional location description, esp if address unknown
+    iconUrl: '', //url for icon
+    lonLatCoordinates:[-81.8618, 41.415] //Longitude and latitude for this location 
+  }
+  */
