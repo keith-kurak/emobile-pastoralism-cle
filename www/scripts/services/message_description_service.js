@@ -13,7 +13,7 @@ angular.module('yomadApp')
         }
 
         if(message.isBurst && message.type === "map") {
-          return pMsg + message.user + ": " + message.name;
+          return pMsg + message.user + ": " + message.locationDesc;
         } else if(message.isBurst && message.type == "land") {
           return pMsg + message.user + ": " + message.name + " at " + message.locationDesc;
         } else if(message.isBurst) {
