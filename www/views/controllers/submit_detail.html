@@ -8,10 +8,10 @@
 <div ng-repeat="option in currentMessageCategory.options">
   <div class="message-frame" ng-click="optionClicked(option)">
     <div class="message-icon-container">
-      <img ng-src="img/Glyphs png/{{option.opID}}.png" ng-class="'icon-style-' + option.color">
+      <img ng-src="img/Glyphs png/{{option.id}}.png" ng-class="'icon-style-' + option.color">
     </div>
     <div class="message-container">
-      <h3 class="text-style">{{option.opName}}</h3>
+      <h3 class="text-style">{{option.name}}</h3>
     </div>
   </div>
 </div>

@@ -17,10 +17,10 @@ angular.module('yomadApp')
     $scope.categoryClicked = function(messageCategory) {
       //if there are options within the category, show those
       if(messageCategory.options && messageCategory.options.length > 0) {
-        var path = '/'+ $scope.locationId + '/submit/' + messageCategory.categoryId;
+        var path = '/'+ $scope.locationId + '/submit/' + messageCategory.id;
         $location.path(path);
       } else { //otherwise just post
-        submissionService.submitMessage(locationId, messageCategory.id).then(function() {
+        submissionService.submitMessage($scope.locationId, messageCategory).then(function() {
           goBackToLocation();
         });
       }

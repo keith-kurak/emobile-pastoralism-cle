@@ -1,86 +1,86 @@
 var message_categories = [
   {
-    categoryId : "weather",
+    id : "weather",
     name : "Weather",
     color : "red",
     options: [
       {
-        opID : "weather-wind",
-        opName : "High Wind",
-        opPriority : 6,
+        id : "weather-wind",
+        name : "High Wind",
+        priority : 6,
         color : "red"
       },
       {
-        opID : "weather-snow",
-        opName : "Snowstorm",
-        opPriority : 8,
+        id : "weather-snow",
+        name : "Snowstorm",
+        priority : 8,
         color : "red"
       }
     ]
   },
 
   {
-    categoryId : "warning",
+    id : "warning",
     name : "Warning",
     color : "red",
     options: [
       {
-        opID : "warning-theft",
-        opName : "Theft",
-        opPriority : 10,
+        id : "warning-theft",
+        name : "Theft",
+        priority : 10,
         color : "red"
       },
       {
-        opID : "warning-badroute",
-        opName : "Bad Route",
-        opPriority : 5,
+        id : "warning-badroute",
+        name : "Bad Route",
+        priority : 5,
         color : "red"
       }
     ]
   },
 
   {
-    categoryId : "land",
+    id : "land",
     name : "Land",
     color : "green",
     options: [
       {
-        opID : "land-grass",
-        opName : "High Grass",
-        opPriority : 2,
+        id : "land-grass",
+        name : "High Grass",
+        priority : 2,
         color : "green"
       },
       {
-        opID : "land-drought",
-        opName : "Drought",
-        opPriority : 8,
+        id : "land-drought",
+        name : "Drought",
+        priority : 8,
         color : "red"
       }
     ]
   },
 
   {
-    categoryId : "market",
+    id : "market",
     name : "Market",
     color : "green",
     options: [
       {
-        opID : "market-wool",
-        opName : "Wool Trade",
-        opPriority : 2,
+        id : "market-wool",
+        name : "Wool Trade",
+        priority : 2,
         color : "green"
       },
       {
-        opID : "market-herbs",
-        opName : "Medicinal Herbs",
-        opPriority : 2,
+        id : "market-herbs",
+        name : "Medicinal Herbs",
+        priority : 2,
         color : "green"
       }
     ]
   },
 
   {
-    categoryId : "map",
+    id : "map",
     name : "Location",
     color : "blue"
   }

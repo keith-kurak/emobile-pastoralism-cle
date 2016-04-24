@@ -5,8 +5,7 @@ angular.module('yomadApp')
     
     submissionService.getMessageCategories().then(function(messageCategories) {
       $scope.currentMessageCategory = _.find(messageCategories, function(messageCategory) {
-        return $routeParams.messageCategoryId === messageCategory.categoryId;
+        return $routeParams.messageCategoryId === messageCategory.id;
       });
     });
-
   }]);
