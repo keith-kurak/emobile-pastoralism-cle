@@ -1,5 +1,20 @@
 Welcome to the emobile-pastoralism-cle wiki!
 
+Yomad
+
+Yomad is designed to aid pastoralists and their families around the world by creating an online community that is focused on their needs.  Pastoralism is the branch of agriculture concerned with the raising of livestock. "Pastoralism" generally has a mobile aspect, moving the herds in search of fresh pasture and water.  
+Our team concentrated on meeting some of the unique challenges of this lifestyle.
+- Apps should be intuitive, perhaps symbol-or picture based to make accessible to the widest possible audience.
+- Unreliable internet/data connectivity: simplicity and low data use recommended.
+- Availability of smartphones may be limited.
+Our solution addresses these constraints in the following ways
+- To solve the issue of language, we implemented minimalist design using icons and pictures whenever possible. Also recognizing that we do not have intimate knowledge of this life, we made an effort to allow user generated content.
+- To address potential technological barriers, we decided to make a web-crossover app, basically a smart phone app that is a web site. We made every effort to make our site readable on all screens, and to limit the amount of data that would be used. Ultimately we hope to run and interact with our site using the most basic phone we have available!
+
+To join our team, follow our steps below (we are working to improve the documentation as we go!)
+
+
+
 First step for anything:
 
 1. Download the github repo using the Github client.
