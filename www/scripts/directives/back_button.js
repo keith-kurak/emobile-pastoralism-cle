@@ -11,7 +11,7 @@ angular.module('yomadApp')
   })
   .directive('backButton', function () {
     return {
-      template: '<span class="back-button" ng-click="backClicked();">Back</span>',
+      template: '<span class="back-button" ng-click="backClicked();">&lt;</span>',
       controller: 'backButtonCtrl',
       replace: true,
     };

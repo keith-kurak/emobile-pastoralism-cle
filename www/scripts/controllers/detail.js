@@ -7,7 +7,4 @@ angular.module('yomadApp')
       $scope.message = message;
     });
 
-    $scope.goBack = function(){
-      //TODO
-    }
   }]);

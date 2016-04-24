@@ -75,6 +75,14 @@
 
     <script type="text/javascript">
     angular.bootstrap(document, ["yomadApp"]);
+
+    function getLocation() {
+    if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+            console.log('geolocation not supported');
+        }
+    }
     </script>
 
   </body>

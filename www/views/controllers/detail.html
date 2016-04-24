@@ -4,11 +4,15 @@
     <h3 class="text-center">{{message.title}}</h3>
   </span>
 </header>
-<br />
-<p>{{message.address1}}</p>
-<p>{{message.address2}}</p>
-<p>{{message.phone}}</p>
-<p>{{message.locationDesc}}</p>
-<p>{{message.detailText}}</p>
+<div style="display:block;margin-left:auto;margin-right:auto">
+  <p>{{message.address1}}</p>
+  <p>{{message.address2}}</p>
+  <p>{{message.phone}}</p>
+  <div>{{message.locationDesc}}</div>
+  <p>{{message.detailText}}</p>
+</div>
+<div ng-if="message.type == 'warning-theft'">
+  <img style="display:block;margin-left:auto;margin-right:auto" src="img/locationmapdemo.png"/>
+</div>
 
 
