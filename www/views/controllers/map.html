@@ -1,1 +1,179 @@
-<div>maps should go here</div>
+  <head>
+    <link rel="stylesheet" href="http://openlayers.org/en/v3.15.1/css/ol.css" type="text/css">
+    <style>
+      .map {
+        height: 400px;
+        width: 100%;
+      }
+    </style>
+    <title>Cleveland Map</title>
+  </head>
+    <div>maps should go here</div>
+    <img ng-src="img/Glyphs png/map.png" class="icon" src="img/Glyphs png/map.png">
+    <h2>Points of interest</h2>
+    <div id="map" class="map"></div>
+    <div>
+      <a href="#/">Home</a>
+    </div>
+    <script type="text/javascript">
+    
+    var locationTest = 
+                  {
+                  "messages":{
+                    "0":{
+                        "isBurst": false,
+                        "burstDuration": 0,
+                        "priority": 1,
+                        "title": "Fairview Hospital",
+                        "type": "hospital",
+                        "address1": "18101 Lorain Avenue",
+                        "address2": "Cleveland, OH 44111",
+                        "phone": "(216) 476-7000",
+                        "mapUrl": "",
+                        "detailImgUrl": "",
+                        "detailText": "",
+                        "locationDesc": "East of the Rocky River, South of I-90",
+                        "iconUrl": "",
+                        "lonLatCoordinates": [-81.8618, 41.415]
+                    },
+                    "1": {
+                        "isBurst": false,  
+                        "burstDuration": 0,  
+                        "priority": 1,  
+                        "title": "Cleveland Police Department", 
+                        "type": "police",  
+                        "address1": "6600 Detroit Avenue",
+                        "address2": "Cleveland, OH 44102", 
+                        "phone": "(216) 348-7117", 
+                        "mapUrl": "", 
+                        "detailImgUrl": "", 
+                        "detailText": "", 
+                        "locationDesc": "South of Lake Erie, West of Cuyahoga River", 
+                        "iconUrl": "",
+                        "lonLatCoordinates": [-81.8504, 41.4124]
+                      }
+                    }
+                  }
+            console.log(locationTest)
+            // Icons
+            var icons = [
+                "img/Glyphs png/snowflake.png",
+                "img/Glyphs png/hospital.png",
+                "../img/Glyphs png/field.png",
+                "../img/Glyphs png/police.png",
+            ];
+            
+            var icon_dict_list = [
+                ["img/Glyphs png/snowflake.png",[ -81.8618, 41.4155]],
+                ["img/Glyphs png/hospital.png",[-81.809974,41.404064]],
+                ["img/Glyphs png/land.png",[-81.888813, 41.411275]],
+                ["img/Glyphs png/police.png",[-81.8504, 41.4124]],
+            ];
+
+            // Create random point features
+            var i, lat, lon, geom, feature, features = [], style, rnd;
+            for (key in locationTest.messages)
+            {
+               var message = locationTest.messages[key];
+               console.log(message)
+               coord = message.lonLatCoordinates
+               console.log
+                geom = new ol.geom.Point(
+                    ol.proj.transform(coord, 'EPSG:4326', 'EPSG:3857')
+                );
+
+                feature = new ol.Feature(geom);
+                features.push(feature);
+                style = [
+                    new ol.style.Style({
+                        image: new ol.style.Icon(({
+                            scale: 1,
+                            anchor: [0.5, 1],
+                            anchorXUnits: 'fraction',
+                            anchorYUnits: 'fraction',
+                            //opacity: rnd,
+                            src: "img/Glyphs png/"+message.type+".png"
+                        }))
+                    }),
+                    new ol.style.Style({
+                        image: new ol.style.Circle({
+                            radius: 5,
+                            fill: new ol.style.Fill({
+                                color: 'rgba(230,120,30,0.7)'
+                            })
+                        })
+                    })
+                ];
+
+                feature.setStyle(style);
+            }
+            /*
+            for(i=0; i< 4; i++) {
+                coord = icon_dict_list[i][1]
+                lat = Math.random() * 174 - 87;
+                lon = Math.random() * 360 - 180;
+
+                geom = new ol.geom.Point(
+                    //ol.proj.transform([lon, lat], 'EPSG:4326', 'EPSG:3857')
+                    ol.proj.transform(coord, 'EPSG:4326', 'EPSG:3857')
+                );
+
+                feature = new ol.Feature(geom);
+                features.push(feature);
+
+                rnd = Math.random();
+                
+                style = [
+                    new ol.style.Style({
+                        image: new ol.style.Icon(({
+                            scale: 1,
+                            rotateWithView: (rnd < 0.9) ? true : false,
+                            //rotation: 360 * rnd * Math.PI / 180,
+                            anchor: [0.5, 1],
+                            anchorXUnits: 'fraction',
+                            anchorYUnits: 'fraction',
+                            //opacity: rnd,
+                            src: icon_dict_list[ i ][0]
+                        }))
+                    }),
+                    new ol.style.Style({
+                        image: new ol.style.Circle({
+                            radius: 5,
+                            fill: new ol.style.Fill({
+                                color: 'rgba(230,120,30,0.7)'
+                            })
+                        })
+                    })
+                ];
+
+                feature.setStyle(style);
+            }    
+            */
+
+            // Source and vector layer
+            var vectorSource = new ol.source.Vector({
+                features: features
+            });
+
+            var vectorLayer = new ol.layer.Vector({
+                source: vectorSource
+            });
+      var map = new ol.Map({
+        target: 'map',
+        layers: [
+          new ol.layer.Tile({
+            source: new ol.source.MapQuest({layer: 'sat'})
+            
+          }),
+          vectorLayer  //The Icon layer
+        ],
+        view: new ol.View({
+          center: ol.proj.fromLonLat([-81.8618, 41.415]), //cleveland
+          zoom: 13
+        })
+      });
+    </script>
+<div style="float:left">
+    <div>{{message.title}}</div>
+    <div>{{message.address1}}</div>
+</div>
