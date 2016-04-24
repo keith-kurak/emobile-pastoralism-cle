@@ -16,17 +16,17 @@ angular.module('yomadApp')
     $scope.getMessagesForLocation();
 
     $scope.showMessageDetail = function(message){
-      var path = '/' + $routeParams.locationId + '/' +_.findKey($scope.messages, message);
+      var path = '/' + $scope.location.id + '/' +_.findKey($scope.messages, message);
       $location.path(path);
     }
 
     $scope.showMap = function(locationId){
-      var path = '/map/'+location.id;
+      var path = '/'+ $scope.location.id + '/map';
       $location.path(path);
     }
 
     $scope.showSubmitMessage = function(){
-      var path = '/submit';
+      var path = '/'+ $scope.location.id + '/submit';
       $location.path(path);
     }
 

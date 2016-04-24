@@ -14,29 +14,25 @@
         templateUrl: 'views/controllers/home.html',
         controller: 'HomeCtrl'
       })
-      /*.when('/home', {
-        templateUrl: 'views/controllers/home.html',
-        controller: 'HomeCtrl'
-      })*/
+      .when('/settings', {
+        templateUrl: 'views/controllers/settings.html',
+        controller: 'SettingsCtrl'
+      })
       .when('/:locationId', {
         templateUrl: 'views/controllers/location.html',
         controller: 'LocationCtrl'
-      })
-      .when('/:locationId/:messageId', {
-        templateUrl: 'views/controllers/detail.html',
-        controller: 'DetailCtrl'
       })
       .when('/:locationId/map', {
         templateUrl: 'views/controllers/map.html',
         controller: 'MapCtrl'
       })
-      .when('/settings', {
-        templateUrl: 'views/controllers/settings.html',
-        controller: 'SettingsCtrl'
-      })
       .when('/:locationId/submit', {
         templateUrl: 'views/controllers/submit.html',
         controller: 'SubmitCtrl'
+      })
+      .when('/:locationId/:messageId', {
+        templateUrl: 'views/controllers/detail.html',
+        controller: 'DetailCtrl'
       })
       .otherwise({
         redirectTo: '/'

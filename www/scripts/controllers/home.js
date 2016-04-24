@@ -13,4 +13,9 @@ angular.module('yomadApp')
       $location.path(path);
     }
 
+    $scope.showSettings = function() {
+      var path = '/settings';
+      $location.path(path);
+    }
+
   }]);

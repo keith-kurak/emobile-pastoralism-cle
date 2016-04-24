@@ -32,3 +32,24 @@
 .message-frame img {
     vertical-align: middle;
 }
+
+.top-button {
+  background-color: black;
+  color: white;
+  padding: 5px 5px 5px 5px;
+  width: 40px;
+}
+
+.top-button-divider {
+  padding-left:3px;
+}
+
+.top-button-container {
+  text-align: center;
+}
+
+.back-button {
+  display: inline-block;
+  float: left;
+  font-size: 12px;
+}

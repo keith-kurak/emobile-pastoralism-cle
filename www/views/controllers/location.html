@@ -1,11 +1,15 @@
-<h1 class="text-center">{{location.name}}</h1>
-<div class="form-group">
-</div>
-<div ng-click="showMap('whatev does not matter yet')">
-  Map
-</div>
-<div ng-click="showSubmitMessage()">
-  Submit
+<header>
+  <span back-button></span>
+  <span><h1 class="text-center">{{location.name}}</h1></span>
+</header>
+<div class="top-button-container">
+  <span class="top-button" ng-click="showMap('whatev does not matter yet')">
+    Map
+  </span>
+  <span class="top-button-divider" />
+  <span class="top-button" ng-click="showSubmitMessage()">
+    Submit
+  </span>
 </div>
 <div ng-repeat="message in messages"
   ng-click="showMessageDetail(message)">
