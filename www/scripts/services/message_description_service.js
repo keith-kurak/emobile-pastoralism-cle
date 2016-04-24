@@ -5,10 +5,17 @@ angular.module('yomadApp')
 
     return {
       getDescriptionForMessage(message) {
+        if(message.priority > 5){
+          var pMsg = "!! ";
+        }
+        else{
+          var pMsg = "";
+        }
+
         if(message.isBurst && message.type === "map") {
-          return message.user + ": " + message.locationDesc;
+          return pMsg + message.user + ": " + message.locationDesc;
         } else if(message.isBurst && message.type == "land" {
-          return message.user + ": " + message.title + " at " + message.locationDesc;
+          return pMsg + message.user + ": " + message.title + " at " + message.locationDesc;
         } else if(message.isBurst) {
           return message.locationDesc;
         } else {
