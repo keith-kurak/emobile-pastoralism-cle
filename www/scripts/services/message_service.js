@@ -32,8 +32,8 @@ angular.module('yomadApp')
     }
 
     function getMessages() {
-      return getMessagesFromSampleData();
-      //return getMessagesFromFirebase();
+      //return getMessagesFromSampleData();
+      return getMessagesFromFirebase();
     }
 
     return {
