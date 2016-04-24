@@ -19,7 +19,7 @@ angular.module('yomadApp')
     $scope.optionClicked = function(option) {
       submissionService.submitMessage($scope.locationId, option).then(function() {
         goBackToLocation();
-        alert('Post submitted!');
+        //alert('Post submitted!');
       });
     }
   }]);
