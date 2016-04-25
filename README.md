@@ -11,7 +11,7 @@ Our solution addresses these constraints in the following ways
 - To solve the issue of language, we implemented minimalist design using icons and pictures whenever possible. Also recognizing that we do not have intimate knowledge of this life, we made an effort to allow user generated content.
 - To address potential technological barriers, we decided to make a web-crossover app, basically a smart phone app that is a web site. We made every effort to make our site readable on all screens, and to limit the amount of data that would be used. Ultimately we hope to run and interact with our site using the most basic phone we have available!
 
-#Features:
+#Features
 
 Our app first prompts the user to select their location, and will then provide a list of nearby points of interest, specifically access to emergency management (police, medical, etc). What we are most excited about is the ability for users to upload their own temporary beacons to provide real-time and relevant information about weather, emergencies, and livestock movements.  We recognize our own ignorance of pastoral life, and seek to provide an intuitive platform for those with real-world experience to build from. 
 We have also integrated a mapping feature utilizing the OpenLayers open source library.  The points of interest nearby will show up on the map, and will hopefully aid someone trying to navigate through unfamiliar terrain.  We ultimately hope to bring in even more useful information like inclement weather, drought conditions, and other satellite imagery.  
